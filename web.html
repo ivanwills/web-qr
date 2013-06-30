@@ -1,13 +1,76 @@
 <head>
-  <title>web</title>
+    <title>Web Quick Reference</title>
 </head>
 
 <body>
-  {{> hello}}
+    {{> nav}}
+    <div class="container-fluid">
+      <div class="row-fluid">
+          {{> header}}
+          {{> data}}
+      </div><!--/row-->
+
+      {{> foot}}
+    </div><!--/.fluid-container-->
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="nav">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Web QR</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#css">CSS</a></li>
+              <li><a href="#js">JS</a></li>
+              <li><a href="#html">HTML</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+</template>
+
+<template name="header">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li class="active"><a href="#">Styles</a></li>
+              <li><a href="#">CSS Units</a></li>
+              <li><a href="#">AT-Rules</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Element Selectors</a></li>
+              <li><a href="#">Attribute Selectors</a></li>
+              <li><a href="#">Special HTML Selectors</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Pseudo-Element Selectors</a></li>
+              <li><a href="#">Pseudo-Class Selectors</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+</template>
+
+<template name="data">
+        <div class="span9">
+          <div class="row-fluid">
+            <div class="span12">
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!--/span-->
+</template>
+
+<template name="foot">
+      <hr>
+      <footer>
+          <p>&copy; Ivan Wills 2013</p>
+      </footer>
 </template>
