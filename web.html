@@ -5,10 +5,12 @@
 <body>
     {{> nav}}
     <div class="container-fluid">
-      <div class="row-fluid">
-          {{> header}}
-          {{> data}}
-      </div><!--/row-->
+      <div class="row-space">
+          <div class="row-fluid">
+              {{> header}}
+              {{> data}}
+          </div><!--/row-->
+      </div><!--/space-->
 
       {{> foot}}
     </div><!--/.fluid-container-->
@@ -29,9 +31,9 @@
               Logged in as <a href="#" class="navbar-link">Username</a>
             </p>
             <ul class="nav">
-              <li class="active"><a href="#css">CSS</a></li>
-              <li><a href="#js">JS</a></li>
-              <li><a href="#html">HTML</a></li>
+                {{#each tables}}
+                    {{> table}}
+                {{/each}}
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -39,33 +41,63 @@
     </div>
 </template>
 
+<template name="table">
+            <li class="{{selected}}"><a href="#{{table}}">{{name}}</a></li>
+</template>
+
 <template name="header">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Styles</a></li>
-              <li><a href="#">CSS Units</a></li>
-              <li><a href="#">AT-Rules</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Element Selectors</a></li>
-              <li><a href="#">Attribute Selectors</a></li>
-              <li><a href="#">Special HTML Selectors</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Pseudo-Element Selectors</a></li>
-              <li><a href="#">Pseudo-Class Selectors</a></li>
-            </ul>
-          </div><!--/.well -->
+        <div class="span2">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    {{#each labels}}
+                        {{> label}}
+                    {{/each}}
+                </ul>
+            </div><!--/.well -->
         </div><!--/span-->
 </template>
 
+<template name="label">
+            <li class="{{selected}}"><a href="#">{{label}}</a></li>
+</template>
+
 <template name="data">
-        <div class="span9">
+        <div class="span10">
           <div class="row-fluid">
             <div class="span12">
+              <table>
+                <thead>
+                  <tr>
+                    {{#each data_heads}}
+                        {{> data_head}}
+                    {{/each}}
+                  </tr>
+                <thead>
+                <tbody>
+                    {{#each values}}
+                        {{> value}}
+                    {{/each}}
+                </tbody>
+              </table>
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
+</template>
+
+<template name="data_head">
+    <th>{{label}}</th>
+</template>
+
+<template name="value">
+<tr>
+    {{#each value_cols}}
+        {{> col}}
+    {{/each}}
+<tr>
+</template>
+
+<template name="col">
+    <td>{{{this}}}</td>
 </template>
 
 <template name="foot">
