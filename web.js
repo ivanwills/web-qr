@@ -1,14 +1,13 @@
 
 Tables = {
-    qr   : new Meteor.Collection("qr"),
-    css  : new Meteor.Collection("css"),
-    js   : new Meteor.Collection("js"),
-    html : new Meteor.Collection("html")
-}
+    qr : new Meteor.Collection("qr")
+};
+Tables.qr.find({}, {}).forEach(function(table) {
+    Tables[table.details.table] = new Meteor.Collection(table.details.table);
+});
 
 if (Meteor.isClient) {
     Template.nav.tables = function () {
-        console.log('tables');
         return Tables.qr.find({}, {}); //sort: {"details.pos": -1, name: 1}});
     };
 
@@ -32,8 +31,10 @@ if (Meteor.isClient) {
     });
 
     Template.header.labels = function() {
-        if ( Session.get('selected_table') )
-            return Tables[Session.get('selected_table')].find();
+        if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')]) 
+            return;
+
+        return Tables[Session.get('selected_table')].find();
     };
 
     Template.label.selected = function() {
@@ -50,7 +51,8 @@ if (Meteor.isClient) {
     });
 
     Template.data.data_heads = function() {
-        if (!Session.get('selected_table')) return;
+        if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
+            return;
 
         var found = Tables[Session.get('selected_table')]
             .findOne(Session.get('selected_label'));
@@ -60,7 +62,8 @@ if (Meteor.isClient) {
     };
 
     Template.data.values = function() {
-        if (!Session.get('selected_table')) return;
+        if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
+            return;
 
         var found = Tables[Session.get('selected_table')]
             .findOne(Session.get('selected_label'));
