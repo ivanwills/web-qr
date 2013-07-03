@@ -4,9 +4,29 @@ Tables = {
 };
 Tables.qr.find({}, {}).forEach(function(table) {
     Tables[table.details.table] = new Meteor.Collection(table.details.table);
+    console.log('creating ', table.details.table, Tables[table.details.table].find().count()  );
 });
+console.log('connected');
 
 if (Meteor.isClient) {
+for (var key in Tables) console.log(key);
+    for ( var coll in {'css':1, 'js':1, 'html':1} ) {
+        console.log(coll);
+        if ( coll === 'qr' ) continue;
+        if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
+        var table = Tables[coll];
+
+        if ( table.find().count() == 1 ) {
+            console.log('trying to get ' + coll);
+            $.getJSON(coll + '.json', function(data) {
+                console.log('got data ', data);
+                for (var i in data ) {
+                    table.insert(data[i]);
+                }
+            });
+        }
+    }
+
     Template.nav.tables = function () {
         return Tables.qr.find({}, {}); //sort: {"details.pos": -1, name: 1}});
     };
@@ -101,6 +121,7 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+for (var key in Tables) console.log(key);
     Meteor.startup(function () {
         if (Tables.qr.find().count() === 0) {
             var names = {
@@ -117,8 +138,20 @@ if (Meteor.isServer) {
                     "pos"   : 3,
                 },
             };
-            for ( var i in names )
+            for ( var i in names ) {
                 Tables.qr.insert({name: i, details: names[i]});
+                if ( !Tables[names[i].table] ) {
+                    console.log('creating collection ', names[i].table);
+                    Tables[names[i].table] = new Meteor.Collection(names[i].table);
+                }
+                Tables[names[i].table].insert({
+                    name: i,
+                    label: i.toUpper,
+                    labels:[],
+                    sort: {},
+                    values: []
+                });
+            }
         }
     });
 }
