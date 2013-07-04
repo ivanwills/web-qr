@@ -16,14 +16,15 @@ for (var key in Tables) console.log(key);
         if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
         var table = Tables[coll];
 
-        if ( table.find().count() == 1 ) {
+        if ( table.find().count() <= 1 ) {
             console.log('trying to get ' + coll);
             $.getJSON(coll + '.json', function(data) {
-                console.log('got data ', data);
-                for (var i in data ) {
-                    table.insert(data[i]);
-                }
+                table.remove();
+                console.log(table.insert(data));
             });
+        }
+        else {
+            console.log('Happy with ', table.find().count(), ' for ', coll);
         }
     }
 
@@ -89,7 +90,7 @@ for (var key in Tables) console.log(key);
             .findOne(Session.get('selected_label'));
 
         if (found) {
-            console.log('found values : ', null);
+            console.log(Session.get('selected_table') + ' found values : ', found.values);
             return found.values;
         }
         console.log('nothing found for ', Session.get('selected_table'));
@@ -138,6 +139,13 @@ for (var key in Tables) console.log(key);
                     "pos"   : 3,
                 },
             };
+
+            var require = __meteor_bootstrap__.require;
+            console.log('Require ', __meteor_bootstrap__);
+            console.log('Require ', require);
+            var fs = require('fs');
+            var file = __dirname + '/test.json';
+
             for ( var i in names ) {
                 Tables.qr.insert({name: i, details: names[i]});
                 if ( !Tables[names[i].table] ) {
