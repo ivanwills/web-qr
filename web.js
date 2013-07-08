@@ -9,12 +9,13 @@ Tables.qr.find({}, {}).forEach(function(table) {
 
 if (Meteor.isClient) {
 
-    // TODO get this config to be dynamic as subscription to Tables.qr not yet ready
-    for ( var coll in {'css':1, 'js':1, 'html':1} ) {
-        if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
-    }
-
     Template.nav.tables = function () {
+        // Read the collections specified in qr
+        Tables.qr.find({}, {}).forEach(function(table) {
+            var coll = table.details.table;
+            if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
+        });
+
         return Tables.qr.find({}, {}); //sort: {"details.pos": -1, name: 1}});
     };
 
