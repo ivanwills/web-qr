@@ -3,29 +3,15 @@ Tables = {
     qr : new Meteor.Collection("qr")
 };
 Tables.qr.find({}, {}).forEach(function(table) {
+    // only executed on server initally
     Tables[table.details.table] = new Meteor.Collection(table.details.table);
-    console.log('creating ', table.details.table, Tables[table.details.table].find().count()  );
 });
-console.log('connected');
 
 if (Meteor.isClient) {
-for (var key in Tables) console.log(key);
-    for ( var coll in {'css':1, 'js':1, 'html':1} ) {
-        console.log(coll);
-        if ( coll === 'qr' ) continue;
-        if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
-        var table = Tables[coll];
 
-        if ( table.find().count() <= 1 ) {
-            console.log('trying to get ' + coll);
-            $.getJSON(coll + '.json', function(data) {
-                table.remove();
-                console.log(table.insert(data));
-            });
-        }
-        else {
-            console.log('Happy with ', table.find().count(), ' for ', coll);
-        }
+    // TODO get this config to be dynamic as subscription to Tables.qr not yet ready
+    for ( var coll in {'css':1, 'js':1, 'html':1} ) {
+        if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
     }
 
     Template.nav.tables = function () {
@@ -52,7 +38,7 @@ for (var key in Tables) console.log(key);
     });
 
     Template.header.labels = function() {
-        if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')]) 
+        if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
             return;
 
         return Tables[Session.get('selected_table')].find();
@@ -124,42 +110,5 @@ for (var key in Tables) console.log(key);
 if (Meteor.isServer) {
 for (var key in Tables) console.log(key);
     Meteor.startup(function () {
-        if (Tables.qr.find().count() === 0) {
-            var names = {
-                "CSS" : {
-                    "table" : "css",
-                    "pos"   : 1,
-                },
-                "JS" : {
-                    "table" : "js",
-                    "pos"   : 2,
-                },
-                "HTML" : {
-                    "table" : "html",
-                    "pos"   : 3,
-                },
-            };
-
-            var require = __meteor_bootstrap__.require;
-            console.log('Require ', __meteor_bootstrap__);
-            console.log('Require ', require);
-            var fs = require('fs');
-            var file = __dirname + '/test.json';
-
-            for ( var i in names ) {
-                Tables.qr.insert({name: i, details: names[i]});
-                if ( !Tables[names[i].table] ) {
-                    console.log('creating collection ', names[i].table);
-                    Tables[names[i].table] = new Meteor.Collection(names[i].table);
-                }
-                Tables[names[i].table].insert({
-                    name: i,
-                    label: i.toUpper,
-                    labels:[],
-                    sort: {},
-                    values: []
-                });
-            }
-        }
     });
 }
