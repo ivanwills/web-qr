@@ -2,9 +2,9 @@
 Tables = {
     qr : new Meteor.Collection("qr")
 };
-Tables.qr.find({}, {}).forEach(function(table) {
+Tables.qr.find().forEach(function(table) {
     // only executed on server initally
-    Tables[table.details.table] = new Meteor.Collection(table.details.table);
+    Tables[table.collection] = new Meteor.Collection(table.collection);
 });
 
 if (Meteor.isClient) {
@@ -12,7 +12,7 @@ if (Meteor.isClient) {
     Template.nav.tables = function () {
         // Read the collections specified in qr
         Tables.qr.find({}, {}).forEach(function(table) {
-            var coll = table.details.table;
+            var coll = table.collection;
             if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
         });
 
@@ -21,19 +21,19 @@ if (Meteor.isClient) {
 
     Template.table.selected = function() {
         if ( !Session.get('selected_table') ) {
-            console.log('selecting: ', this.details.table);
-            Session.set('selected_table', this.details.table);
+            console.log('selecting: ', this);
+            Session.set('selected_table', this.collection);
         }
-        return Session.equals("selected_table", this.details.table) ? "active" : '';
+        return Session.equals("selected_table", this.collection) ? "active" : '';
     };
 
     Template.table.table = function() {
-        return this.details.table;
+        return this.collection;
     };
 
     Template.table.events({
         'click' : function() {
-            Session.set("selected_table", this.details.table);
+            Session.set("selected_table", this.collection);
             Session.set("selected_label", null);
         }
     });
