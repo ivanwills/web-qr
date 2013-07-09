@@ -2,7 +2,7 @@
 Tables = {
     qr : new Meteor.Collection("qr")
 };
-Tables.qr.find().forEach(function(table) {
+Tables.qr.find({).sort({"pos": 1}).forEach(function(table) {
     // only executed on server initally
     Tables[table.collection] = new Meteor.Collection(table.collection);
 });
