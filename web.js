@@ -21,7 +21,6 @@ if (Meteor.isClient) {
 
     Template.table.selected = function() {
         if ( !Session.get('selected_table') ) {
-            console.log('selecting: ', this);
             Session.set('selected_table', this.collection);
         }
         return Session.equals("selected_table", this.collection) ? "active" : '';
@@ -38,11 +37,14 @@ if (Meteor.isClient) {
         }
     });
 
-    Template.header.labels = function() {
-        if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
+    Template.header.labels = function(a) {
+        var collection = Session.get('selected_table');
+        if ( !Tables || !collection )
             return;
 
-        return Tables[Session.get('selected_table')].find();
+        var data = Tables.qr.find( { collection : collection } );
+        data.forEach(function(d) { data = d });
+        return data.sections;
     };
 
     Template.label.selected = function() {
@@ -98,7 +100,6 @@ if (Meteor.isClient) {
         for ( var lable in found.labels ) {
             cols.push(this[ found.labels[lable].name ]);
         }
-        console.log(found.labels);
         return cols;
     };
 
