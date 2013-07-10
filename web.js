@@ -2,7 +2,7 @@
 Tables = {
     qr : new Meteor.Collection("qr")
 };
-Tables.qr.find({}, {sort:{"pos": 1}}).forEach(function(table) {
+Tables.qr.find().forEach(function(table) {
     // only executed on server initally
     Tables[table.collection] = new Meteor.Collection(table.collection);
 });
@@ -16,7 +16,7 @@ if (Meteor.isClient) {
             if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
         });
 
-        return Tables.qr.find({}, {}); //sort: {"details.pos": -1, name: 1}});
+        return Tables.qr.find({}, { sort : { pos : 1 } });
     };
 
     Template.table.selected = function() {
