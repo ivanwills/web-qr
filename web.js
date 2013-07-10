@@ -49,14 +49,14 @@ if (Meteor.isClient) {
 
     Template.label.selected = function() {
         if ( !Session.get('selected_label') ) {
-            Session.set('selected_label', this._id);
+            Session.set('selected_label', this.name);
         }
-        return Session.equals("selected_label", this._id) ? "active" : '';
+        return Session.equals("selected_label", this.name) ? "active" : '';
     };
 
     Template.label.events({
         'click' : function() {
-            Session.set("selected_label", this._id);
+            Session.set("selected_label", this.name);
         }
     });
 
@@ -87,9 +87,10 @@ if (Meteor.isClient) {
 
     Template.value.selected = function() {
         if ( !Session.get('selected_label') ) {
-            Session.set('selected_label', this.label);
+            Session.set('selected_label', this.name);
+            console.log('label : ', this);
         }
-        return Session.equals("selected_label", this.label) ? "active" : '';
+        return Session.equals("selected_label", this.name) ? "active" : '';
     };
 
     Template.value.value_cols = function() {
