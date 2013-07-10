@@ -1,0 +1,162 @@
+[
+	{
+		"name"       : "CSS",
+		"pos"        : 1,
+		"collection" : "css",
+		"sections"   : [
+			{
+				"name":   "styles",
+				"label":  "Styles",
+				"labels": [
+					{ "name": "attribute",   "label": "Name"          },
+					{ "name": "versions",    "label": "Ver"           },
+					{ "name": "values",      "label": "Values"        },
+					{ "name": "initial_val", "label": "Initial Value" },
+					{ "name": "applies_to",  "label": "Applies to"    }
+				],
+				"sort": {
+					"col":   "attribute",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "units",
+				"label": "CSS Units",
+				"labels": [
+					{ "name": "unit",   "label": "Unit"   },
+					{ "name": "values", "label": "Values" }
+				],
+				"sort": {
+					"col":   "unit",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "at_rules",
+				"label": "AT-Rules",
+				"labels": [
+					{ "name": "rule",        "label": "Rule"        },
+					{ "name": "version",     "label": "Version"     },
+					{ "name": "syntax",      "label": "Syntax"      },
+					{ "name": "description", "label": "Description" }
+				],
+				"sort": {
+					"col":   "rule",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "eleme_sel",
+				"label":  "Element Selectors",
+				"labels": [
+					{ "name": "selector",    "label": "Selector"    },
+					{ "name": "ver",         "label": "Ver"         },
+					{ "name": "description", "label": "Description" },
+					{ "name": "name",        "label": "Name"        }
+				],
+				"sort": {
+					"col":   "selector",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "attrib_sel",
+				"label":  "Attribute Selectors",
+				"labels": [
+					{ "name": "selector",    "label": "Selector"    },
+					{ "name": "ver",         "label": "Ver"         },
+					{ "name": "description", "label": "Description" },
+					{ "name": "name",        "label": "Name"        }
+				],
+				"sort": {
+					"col":   "selector",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "special_sel",
+				"label":  "Special HTML Selectors",
+				"labels": [
+					{ "name": "selector",    "label": "Selector"    },
+					{ "name": "ver",         "label": "Ver"         },
+					{ "name": "description", "label": "Description" },
+					{ "name": "name",        "label": "Name"        }
+				],
+				"sort": {
+					"col":   "selector",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "pseudo_eleme_sel",
+				"label":  "Pseudo-Element Selectors",
+				"labels": [
+					{ "name": "selector",    "label": "Selector"    },
+					{ "name": "ver",         "label": "Ver"         },
+					{ "name": "description", "label": "Description" },
+					{ "name": "name",        "label": "Name"        }
+				],
+				"sort": {
+					"col":   "selector",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "pseudo_class_sel",
+				"label":  "Pseudo-Class Selectors",
+				"labels": [
+					{ "name": "selector",    "label": "Selector"    },
+					{ "name": "ver",         "label": "Ver"         },
+					{ "name": "description", "label": "Description" },
+					{ "name": "name",        "label": "Name"        }
+				],
+				"sort": {
+					"col":   "selector",
+					"order": "asc"
+				}
+			}
+		]
+	},
+	{
+		"name"       : "JS",
+		"pos"        : 2,
+		"collection" : "js",
+		"sections"   : [
+			{
+				"name": "Date",
+				"label":  "Date",
+				"labels": [
+					{ "name": "selector",    "label": "Selector"    },
+					{ "name": "ver",         "label": "Ver"         },
+					{ "name": "description", "label": "Description" },
+					{ "name": "name",        "label": "Name"        }
+				],
+				"sort": {
+					"col":   "selector",
+					"order": "asc"
+				}
+			},
+			{
+				"name": "JSON",
+				"label":  "JSON",
+				"labels": [
+					{ "name": "selector",    "label": "Selector"    },
+					{ "name": "ver",         "label": "Ver"         },
+					{ "name": "description", "label": "Description" },
+					{ "name": "name",        "label": "Name"        }
+				],
+				"sort": {
+					"col":   "selector",
+					"order": "asc"
+				}
+			}
+		]
+	},
+	{
+		"name"       : "HTML",
+		"pos"        : 3,
+		"collection" : "html",
+		"sections"   : [
+		]
+	}
+]
