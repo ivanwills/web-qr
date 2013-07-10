@@ -19,25 +19,25 @@ if (Meteor.isClient) {
         return Tables.qr.find({}, { sort : { pos : 1 } });
     };
 
-    Template.table.selected = function() {
+    Template.sections.selected = function() {
         if ( !Session.get('selected_table') ) {
             Session.set('selected_table', this.collection);
         }
         return Session.equals("selected_table", this.collection) ? "active" : '';
     };
 
-    Template.table.table = function() {
+    Template.sections.table = function() {
         return this.collection;
     };
 
-    Template.table.events({
+    Template.sections.events({
         'click' : function() {
             Session.set("selected_table", this.collection);
             Session.set("selected_label", null);
         }
     });
 
-    Template.header.labels = function(a) {
+    Template.sidebar.labels = function(a) {
         var collection = Session.get('selected_table');
         if ( !Tables || !collection )
             return;

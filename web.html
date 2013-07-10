@@ -7,7 +7,7 @@
     <div class="container-fluid">
       <div class="row-space">
           <div class="row-fluid">
-              {{> header}}
+              {{> sidebar}}
               {{> data}}
           </div><!--/row-->
       </div><!--/space-->
@@ -32,7 +32,7 @@
             </p>
             <ul class="nav">
                 {{#each tables}}
-                    {{> table}}
+                    {{> sections}}
                 {{/each}}
             </ul>
           </div><!--/.nav-collapse -->
@@ -41,11 +41,11 @@
     </div>
 </template>
 
-<template name="table">
+<template name="sections">
             <li class="{{selected}}"><a href="#{{table}}">{{name}}</a></li>
 </template>
 
-<template name="header">
+<template name="sidebar">
         <div class="span2">
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
