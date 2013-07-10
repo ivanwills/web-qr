@@ -64,11 +64,19 @@ if (Meteor.isClient) {
         if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
             return;
 
-        var found = Tables[Session.get('selected_table')]
-            .findOne(Session.get('selected_label'));
+        var found = Tables.qr.findOne({ collection : Session.get('selected_table') });
 
-        if (found)
+        console.log('found ');
+        if (found) {
+            found = _.find(
+                found.sections,
+                function(section) {
+                    return section.name == Session.set('selected_label')
+                }
+            );
+            console.log('found ', found );
             return found.labels;
+        }
     };
 
     Template.data.values = function() {
@@ -85,17 +93,12 @@ if (Meteor.isClient) {
         console.log('nothing found for ', Session.get('selected_table'));
     };
 
-    Template.value.selected = function() {
-        if ( !Session.get('selected_label') ) {
-            Session.set('selected_label', this.name);
-            console.log('label : ', this);
-        }
-        return Session.equals("selected_label", this.name) ? "active" : '';
-    };
-
     Template.value.value_cols = function() {
-        var found = Tables[Session.get('selected_table')]
-            .findOne(Session.get('selected_label'));
+        console.log('val cols');
+        if ( !Session.get('selected_table') ) return;
+
+        return Tables[Session.get('selected_table')]
+            .find({ type : Session.get('selected_label') });
 
         var cols = [];
         for ( var lable in found.labels ) {
