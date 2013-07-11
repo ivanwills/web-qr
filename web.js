@@ -71,11 +71,10 @@ if (Meteor.isClient) {
             found = _.find(
                 found.sections,
                 function(section) {
-                    return section.name == Session.set('selected_label')
+                    return Session.equals('selected_label', section.name)
                 }
             );
-            console.log('found ', found );
-            return found.labels;
+            return found ? found.labels : null;
         }
     };
 
