@@ -74,30 +74,46 @@ if (Meteor.isClient) {
                     return Session.equals('selected_label', section.name)
                 }
             );
-            return found ? found.labels : null;
+            if (!found) return;
+
+            console.log( 'headings ', found);
+            Session.set('labels', found.labels);
+            return found.labels;
         }
     };
 
     Template.data.values = function() {
-        if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
+        var selected_table = Session.get('selected_table');
+        var selected_label = Session.get('selected_label');
+        console.log('table ', selected_table, ' - ', selected_label);
+
+        if ( !Tables || !selected_table || !Tables[selected_table])
             return;
 
-        var found = Tables[Session.get('selected_table')]
-            .findOne(Session.get('selected_label'));
+        console.log('finding ', selected_table, ' - ', selected_label);
+        var found = Tables[selected_table]
+            .find({ type : selected_label}, {limit : 2} );
 
         if (found) {
-            console.log(Session.get('selected_table') + ' found values : ', found.values);
-            return found.values;
+            console.log(selected_table + ' found values : ', found);
+            return found;
         }
-        console.log('nothing found for ', Session.get('selected_table'));
+        console.log('nothing found for ', selected_table, ' - ', selected_label);
     };
 
     Template.value.value_cols = function() {
         console.log('val cols');
         if ( !Session.get('selected_table') ) return;
 
+        var columns = Session.get('labels');
+        console.log(columns);
         return Tables[Session.get('selected_table')]
-            .find({ type : Session.get('selected_label') });
+            .find({ type : Session.get('selected_label') })
+            .map(function (row) {
+                var object = [];
+                for ( var label in columns ) {
+                    object.push( 
+            });
 
         var cols = [];
         for ( var lable in found.labels ) {
