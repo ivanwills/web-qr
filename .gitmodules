@@ -1,0 +1,6 @@
+[submodule "packages/page-js-ie-support"]
+	path = packages/page-js-ie-support
+	url = https://github.com/ivanwills/meteor-page-js-ie-support.git
+[submodule "packages/router"]
+	path = packages/router
+	url = https://github.com/ivanwills/meteor-router.git
