@@ -92,7 +92,7 @@ if (Meteor.isClient) {
 
         console.log('finding ', selected_table, ' - ', selected_label);
         var found = Tables[selected_table]
-            .find({ type : selected_label}, {limit : 2} );
+            .find({ type : selected_label}, {limit : 299} );
 
         if (found) {
             console.log(selected_table + ' found values : ', found);
@@ -105,23 +105,11 @@ if (Meteor.isClient) {
         if ( !Session.get('selected_table') ) return;
 
         var columns = Session.get('labels');
-        console.log('columns ', columns);
-        return Tables[Session.get('selected_table')]
-            .find({ type : Session.get('selected_label') })
-            .map(function (row) {
-                var object = [];
-                for ( var i in columns ) {
-                    object.push(row[ columns[i].name ]);
-                }
-                console.log('translate ', row, object);
-                return object;
-            });
-
-        var cols = [];
-        for ( var lable in found.labels ) {
-            cols.push(this[ found.labels[lable].name ]);
+        var values = [];
+        for ( var i in columns ) {
+            values.push( this[ columns[i].name ] );
         }
-        return cols;
+        return values;
     };
 
     Template.col.attribute = function() {
