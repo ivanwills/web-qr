@@ -102,17 +102,19 @@ if (Meteor.isClient) {
     };
 
     Template.value.value_cols = function() {
-        console.log('val cols');
         if ( !Session.get('selected_table') ) return;
 
         var columns = Session.get('labels');
-        console.log(columns);
+        console.log('columns ', columns);
         return Tables[Session.get('selected_table')]
             .find({ type : Session.get('selected_label') })
             .map(function (row) {
                 var object = [];
-                for ( var label in columns ) {
-                    object.push( 
+                for ( var i in columns ) {
+                    object.push(row[ columns[i].name ]);
+                }
+                console.log('translate ', row, object);
+                return object;
             });
 
         var cols = [];
