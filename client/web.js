@@ -1,10 +1,26 @@
 
+Deps.autorun(function () {
+    Meteor.subscribe('qr', Session.get('qr'));
+});
 Tables = {
     qr : new Meteor.Collection("qr")
 };
-Tables.qr.find().forEach(function(table) {
-    // only executed on server initally
-    Tables[table.collection] = new Meteor.Collection(table.collection);
+
+Deps.autorun(function () {
+    Tables.qr.find().forEach(function(table) {
+        // only executed on server initally
+        Tables[table.collection] = null;
+    });
+
+    for ( var table in Tables ) {
+        if ( Tables[table] ) continue;
+
+        Deps.autorun(function () {
+            Meteor.subscribe(table, Session.get(table));
+        });
+        Tables[table] = new Meteor.Collection(table);;
+    }
+    console.log(Tables);
 });
 
 Template.nav.tables = function () {

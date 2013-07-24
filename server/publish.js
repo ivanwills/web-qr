@@ -7,8 +7,14 @@ Tables.qr.find().forEach(function(table) {
     Tables[table.collection] = new Meteor.Collection(table.collection);
 });
 
-
-for (var key in Tables) console.log(key);
+for ( var table in Tables ) {
+    console.log(key);
+    (function(table) {
+        Meteor.publish(table, function() {
+            return Tables[table].find();
+        });
+    })(table);
+}
 
 Meteor.startup(function () {
 });
