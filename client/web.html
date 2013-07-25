@@ -5,7 +5,9 @@
 <body>
     {{> nav}}
     <div class="container-fluid">
+      <div class="row-space">
         {{#isolate}} {{renderPage}} {{/isolate}}
+      </div><!--/space-->
 
         {{> foot}}
     </div><!--/.fluid-container-->
@@ -16,12 +18,10 @@ loading...
 </template>
 
 <template name="qr">
-      <div class="row-space">
           <div class="row-fluid">
               {{> sidebar}}
               {{> data}}
           </div><!--/row-->
-      </div><!--/space-->
 </template>
 
 <template name="nav">
@@ -33,7 +33,7 @@ loading...
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Web QR</a>
+          <a class="brand" href="/">Web QR</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
               {{loginButtons}}
@@ -50,7 +50,7 @@ loading...
 </template>
 
 <template name="sections">
-            <li class="{{selected}}"><a href="#{{table}}">{{name}}</a></li>
+            <li class="{{selected}}"><a href="/{{table}}">{{name}}</a></li>
 </template>
 
 <template name="sidebar">
@@ -66,7 +66,7 @@ loading...
 </template>
 
 <template name="label">
-            <li class="{{selected}}"><a href="#">{{label}}</a></li>
+<li class="{{selected}}"><a href="/{{ table }}/{{ label }}">{{label}}</a></li>
 </template>
 
 <template name="data">
@@ -112,6 +112,6 @@ loading...
 <template name="foot">
       <footer>
           <hr>
-          <p>&copy; Ivan Wills 2013</p>
+          <p>&copy; Ivan Wills 2013 {{ currentPage }}</p>
       </footer>
 </template>

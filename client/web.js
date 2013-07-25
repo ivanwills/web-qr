@@ -21,6 +21,7 @@ Deps.autorun(function () {
         Tables[table] = new Meteor.Collection(table);;
     }
     console.log(Tables);
+    Session.set('qr', true);
 });
 
 Template.nav.tables = function () {
@@ -59,6 +60,14 @@ Template.sidebar.labels = function(a) {
     var data = Tables.qr.find( { collection : collection } );
     data.forEach(function(d) { data = d });
     return data.sections;
+};
+
+Template.label.table = function(a) {
+    var collection = Session.get('selected_table');
+    if ( !Tables || !collection )
+        return;
+
+    return collection;
 };
 
 Template.label.selected = function() {
