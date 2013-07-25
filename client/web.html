@@ -5,16 +5,24 @@
 <body>
     {{> nav}}
     <div class="container-fluid">
+        {{#isolate}} {{renderPage}} {{/isolate}}
+
+        {{> foot}}
+    </div><!--/.fluid-container-->
+</body>
+
+<template name="blank">
+loading...
+</template>
+
+<template name="qr">
       <div class="row-space">
           <div class="row-fluid">
               {{> sidebar}}
               {{> data}}
           </div><!--/row-->
       </div><!--/space-->
-
-      {{> foot}}
-    </div><!--/.fluid-container-->
-</body>
+</template>
 
 <template name="nav">
     <div class="navbar navbar-inverse navbar-fixed-top">
