@@ -63,11 +63,7 @@ Template.sidebar.labels = function(a) {
 };
 
 Template.label.table = function(a) {
-    var collection = Session.get('selected_table');
-    if ( !Tables || !collection )
-        return;
-
-    return collection;
+    return Session.get('selected_table');
 };
 
 Template.label.selected = function() {
