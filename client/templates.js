@@ -129,7 +129,13 @@ Template.example.examples = function() {
 
 $(document).scroll( function(a,b,c) {
     if ( $('#example').size() ) {
-        console.log('scrolling', $('#example').offset().top, $('#sidebar').offset().bottom, $(document).offset().top );
+        console.log(
+            'scrolling'
+            , $('#example').offset().top
+            , $('#sidebar').offset().bottom
+            , $('#example').scrollTop()
+            , $(document).scrollTop()
+        );
     }
 });
 
