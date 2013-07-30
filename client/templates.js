@@ -1,3 +1,4 @@
+Session.set('example', false);
 
 Template.nav.tables = function () {
     // Read the collections specified in qr
@@ -118,10 +119,17 @@ Template.col.attribute = function() {
 };
 
 Template.sidebar.hover = function() {
-    console.log('hover', Session.get('example') );
+    /*console.log('hover', Session.get('example') );*/
     return Session.get('example');
 };
 
 Template.example.examples = function() {
     return Session.get('example');
 };
+
+$(document).scroll( function(a,b,c) {
+    if ( $('#example').size() ) {
+        console.log('scrolling', $('#example').offset().top, $('#sidebar').offset().bottom, $(document).offset().top );
+    }
+});
+

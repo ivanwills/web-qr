@@ -55,7 +55,7 @@ loading...
 
 <template name="sidebar">
         <div class="span2">
-            <div class="well sidebar-nav">
+            <div id="sidebar" class="well sidebar-nav">
                 <ul class="nav nav-list">
                     {{#each labels}}
                         {{> label}}
@@ -113,7 +113,7 @@ loading...
 </template>
 
 <template name="example">
-<div class="well" style="pos-ition: fixed; wi-dth: 14.5299%">
+<div id="example" class="well" style="pos-ition: fixed; wi-dth: 14.5299%">
         <b>Example</b><br/>
         {{{ examples }}}
     </div>
