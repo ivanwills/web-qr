@@ -1,3 +1,4 @@
+
 Meteor.Router.add({
     '/' : function() {
         console.log('root');
@@ -28,3 +29,29 @@ Meteor.Router.add({
         return 'qr';
     },
 });
+
+Deps.autorun(function () {
+    Meteor.subscribe('qr', Session.get('qr'));
+});
+Tables = {
+    qr : new Meteor.Collection("qr")
+};
+
+Deps.autorun(function () {
+    Tables.qr.find().forEach(function(table) {
+        // only executed on server initally
+        Tables[table.collection] = null;
+    });
+
+    for ( var table in Tables ) {
+        if ( Tables[table] ) continue;
+
+        Deps.autorun(function () {
+            Meteor.subscribe(table, Session.get(table));
+        });
+        Tables[table] = new Meteor.Collection(table);;
+    }
+    console.log(Tables);
+    Session.set('qr', true);
+});
+
