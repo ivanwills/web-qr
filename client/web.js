@@ -120,6 +120,13 @@ Template.data.values = function() {
     console.log('nothing found for ', selected_table, ' - ', selected_label);
 };
 
+Template.value.events({
+    'mouseenter tr' : function() {
+        console.log('this', this.examples, ' last ', Session.get('example'));
+        Session.set('example', this.examples);
+    }
+});
+
 Template.value.value_cols = function() {
     if ( !Session.get('selected_table') ) return;
 
@@ -133,4 +140,13 @@ Template.value.value_cols = function() {
 
 Template.col.attribute = function() {
     console.log('attribute ', this);
+};
+
+Template.sidebar.hover = function() {
+    console.log('hover', Session.get('example') );
+    return Session.get('example');
+};
+
+Template.example.examples = function() {
+    return Session.get('example');
 };

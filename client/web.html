@@ -62,6 +62,9 @@ loading...
                     {{/each}}
                 </ul>
             </div><!--/.well -->
+            {{#if hover}}
+                {{> example}}
+            {{/if}}
         </div><!--/span-->
 </template>
 
@@ -107,6 +110,13 @@ loading...
 
 <template name="col">
     <td>{{{this}}}</td>
+</template>
+
+<template name="example">
+<div class="well" style="pos-ition: fixed; wi-dth: 14.5299%">
+        <b>Example</b><br/>
+        {{{ examples }}}
+    </div>
 </template>
 
 <template name="foot">
