@@ -98,7 +98,6 @@ Template.data.values = function() {
 
 Template.value.events({
     'mouseenter tr' : function() {
-        console.log('this', this.examples, ' last ', Session.get('example'));
         Session.set('example', this.examples);
     }
 });
@@ -119,7 +118,6 @@ Template.col.attribute = function() {
 };
 
 Template.sidebar.hover = function() {
-    /*console.log('hover', Session.get('example') );*/
     return Session.get('example');
 };
 
@@ -127,15 +125,25 @@ Template.example.examples = function() {
     return Session.get('example');
 };
 
+var initial_top   = false;
+var initial_width = false;
+var offset        = 50;
 $(document).scroll( function(a,b,c) {
     if ( $('#example').size() ) {
-        console.log(
-            'scrolling'
-            , $('#example').offset().top
-            , $('#sidebar').offset().bottom
-            , $('#example').scrollTop()
-            , $(document).scrollTop()
-        );
+        var eg = $('#example');
+        if ( !initial_top ) {
+            initial_top   = eg.offset().top;
+            initial_width = eg.width();
+        }
+
+        if ( $(document).scrollTop() > initial_top - offset ) {
+            // fixed
+            eg.css({ position : 'fixed', width: initial_width + 'px', top : offset + 'px' });
+        }
+        else {
+            // normal
+            eg.css({ position : 'inherit', width : 'auto', top : 'auto' });
+        }
     }
 });
 
