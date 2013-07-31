@@ -25,6 +25,7 @@ Template.sections.events({
     'click' : function() {
         Session.set("selected_table", this.collection);
         Session.set("selected_label", null);
+        Session.set("labels", null);
     }
 });
 
@@ -56,12 +57,12 @@ Template.label.events({
 });
 
 Template.data.data_heads = function() {
+    Session.set('labels', null);
     if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
         return;
 
     var found = Tables.qr.findOne({ collection : Session.get('selected_table') });
 
-    console.log('found ');
     if (found) {
         found = _.find(
             found.sections,
@@ -71,7 +72,8 @@ Template.data.data_heads = function() {
         );
         if (!found) return;
 
-        console.log( 'headings ', found);
+        var sort = Session.get('label_sort');
+        Session.set('label_sort', found.labels[sort] ? sort : 0);
         Session.set('labels', found.labels);
         return found.labels;
     }
@@ -80,14 +82,20 @@ Template.data.data_heads = function() {
 Template.data.values = function() {
     var selected_table = Session.get('selected_table');
     var selected_label = Session.get('selected_label');
-    console.log('table ', selected_table, ' - ', selected_label);
+    var labels     = Session.get('labels');
+    var label_sort = Session.get('label_sort');
 
     if ( !Tables || !selected_table || !Tables[selected_table])
         return;
 
-    console.log('finding ', selected_table, ' - ', selected_label);
+    var sort = {};
+    sort[ labels[ label_sort ].name ] = 1;
+    console.log('labels ', labels, label_sort, labels[label_sort], sort);
     var found = Tables[selected_table]
-        .find({ type : selected_label}, {limit : 299} );
+        .find(
+            { type : selected_label},
+            { limit : 299, sort : sort }
+        );
 
     if (found) {
         console.log(selected_table + ' found values : ', found);
