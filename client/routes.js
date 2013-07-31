@@ -10,6 +10,7 @@ Meteor.Router.add({
         if ( current_table != table ) {
             Session.set('selected_table', table);
             Session.set("selected_label", null);
+            Session.set('label_group', null);
         }
         return 'qr';
     },
@@ -23,6 +24,7 @@ Meteor.Router.add({
         else if ( current_label != label ) {
             Session.set("selected_label", label);
         }
+        Session.set('label_group', null);
         return 'qr';
     },
 });

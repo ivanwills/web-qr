@@ -23,9 +23,11 @@ Template.sections.table = function() {
 
 Template.sections.events({
     'click' : function() {
-        Session.set("selected_table", this.collection);
-        Session.set("selected_label", null);
-        Session.set("labels", null);
+        if ( !Session.equals("selected_table", this.collection) ) {
+            Session.set("selected_table", this.collection);
+            Session.set("selected_label", null);
+            Session.set("labels", null);
+        }
     }
 });
 
@@ -52,7 +54,8 @@ Template.label.selected = function() {
 
 Template.label.events({
     'click' : function() {
-        Session.set("selected_label", this.name);
+        if ( !Session.equals("selected_label", this.name) )
+            Session.set("selected_label", this.name);
     }
 });
 
@@ -79,6 +82,24 @@ Template.data.data_heads = function() {
     }
 };
 
+Template.data.groups = function() {
+    var groups = Session.get('groups');
+    return groups ? groups : null;
+};
+
+Template.data_head.events({
+    'click th' : function() {
+        var labels     = Session.get('labels');
+        var label_sort = Session.get('label_sort');
+        for ( var i in labels ) {
+            if ( labels[i].name == this.name ) {
+                Session.set("label_sort", i);
+                return;
+            }
+        }
+    }
+});
+
 Template.data.values = function() {
     var selected_table = Session.get('selected_table');
     var selected_label = Session.get('selected_label');
@@ -90,18 +111,42 @@ Template.data.values = function() {
 
     var sort = {};
     sort[ labels[ label_sort ].name ] = 1;
-    console.log('labels ', labels, label_sort, labels[label_sort], sort);
     var found = Tables[selected_table]
         .find(
             { type : selected_label},
-            { limit : 299, sort : sort }
+            { sort : sort }
         );
 
     if (found) {
-        console.log(selected_table + ' found values : ', found);
+        try {
+        if ( found.count() > 20 ) {
+            var rows   = {};
+            var groups = [];
+            found.forEach(function(row) {
+                var group = row[ labels[ label_sort ].name ].substr(0,1).toLowerCase();
+
+                if ( !rows[ group ] ) groups.push(group);
+
+                rows[ group ] = true;
+            });
+
+            Session.set('groups', groups.sort());
+        }
+        else
+            Session.set('groups', []);
+        }
+        catch(e) {
+            console.error('error calc groups', e);
+        }
+
+        var group = Session.get('label_group');
+        if (group) {
+            var group_re = new Regexp('^' + group);
+            console.log(group_re);
+        }
         return found;
+        return group ? _.filter(found, function(a) {}) : found;
     }
-    console.log('nothing found for ', selected_table, ' - ', selected_label);
 };
 
 Template.value.events({
@@ -132,6 +177,12 @@ Template.sidebar.hover = function() {
 Template.example.examples = function() {
     return Session.get('example');
 };
+
+Template.group.events({
+    'click' : function() {
+        Session.set('label_group', this + '');
+    }
+});
 
 var initial_top   = false;
 var initial_width = false;
