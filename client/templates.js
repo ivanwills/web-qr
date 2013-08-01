@@ -119,21 +119,21 @@ Template.data.values = function() {
 
     if (found) {
         try {
-        if ( found.count() > 20 ) {
-            var rows   = {};
-            var groups = [];
-            found.forEach(function(row) {
-                var group = row[ labels[ label_sort ].name ].substr(0,1).toLowerCase();
+            if ( found.count() > 20 ) {
+                var rows   = {};
+                var groups = [];
+                found.forEach(function(row) {
+                    var group = row[ labels[ label_sort ].name ].substr(0,1).toLowerCase();
 
-                if ( !rows[ group ] ) groups.push(group);
+                    if ( !rows[ group ] ) groups.push(group);
 
-                rows[ group ] = true;
-            });
+                    rows[ group ] = true;
+                });
 
-            Session.set('groups', groups.sort());
-        }
-        else
-            Session.set('groups', []);
+                Session.set('groups', groups.sort());
+            }
+            else
+                Session.set('groups', []);
         }
         catch(e) {
             console.error('error calc groups', e);
@@ -141,8 +141,17 @@ Template.data.values = function() {
 
         var group = Session.get('label_group');
         if (group) {
-            var group_re = new Regexp('^' + group);
+            var group_re = new RegExp('^' + group, 'i');
             console.log(group_re);
+            try {
+                var name = labels[label_sort].name;
+                console.log(label_sort, labels[label_sort], name);
+            var filter = found.forEach( function(e){
+                console.log(found);
+                e[ name ].match(group_re);
+            } );
+            return filter;
+            } catch(e) { console.error('filter ', e); }
         }
         return found;
         return group ? _.filter(found, function(a) {}) : found;
@@ -183,6 +192,10 @@ Template.group.events({
         Session.set('label_group', this + '');
     }
 });
+
+Template.group.active = function() {
+    return Session.equals('label_group', this+'');
+};
 
 var initial_top   = false;
 var initial_width = false;
