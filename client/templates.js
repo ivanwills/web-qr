@@ -146,9 +146,10 @@ Template.data.values = function() {
             try {
                 var name = labels[label_sort].name;
                 console.log(label_sort, labels[label_sort], name);
-            var filter = found.forEach( function(e){
+            var filter = [];
+            found.forEach( function(e){
                 console.log(found);
-                e[ name ].match(group_re);
+                if ( e[ name ].match(group_re) ) filter.push(e);
             } );
             return filter;
             } catch(e) { console.error('filter ', e); }
@@ -194,7 +195,7 @@ Template.group.events({
 });
 
 Template.group.active = function() {
-    return Session.equals('label_group', this+'');
+    return Session.equals('label_group', this+'') ? ' active' : '';
 };
 
 var initial_top   = false;
