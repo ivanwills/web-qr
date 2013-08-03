@@ -24,7 +24,6 @@ Meteor.Router.add({
         else if ( current_label != label ) {
             Session.set("selected_label", label);
         }
-        Session.set('label_group', null);
         return 'qr';
     },
 });

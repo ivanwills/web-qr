@@ -59,6 +59,12 @@ Template.label.events({
     }
 });
 
+Template.data.events({
+    'click caption li a' : function() {
+        Session.set('label_group', '');
+    }
+});
+
 Template.data.data_heads = function() {
     Session.set('labels', null);
     if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
@@ -86,19 +92,6 @@ Template.data.groups = function() {
     var groups = Session.get('groups');
     return groups ? groups : null;
 };
-
-Template.data_head.events({
-    'click th' : function() {
-        var labels     = Session.get('labels');
-        var label_sort = Session.get('label_sort');
-        for ( var i in labels ) {
-            if ( labels[i].name == this.name ) {
-                Session.set("label_sort", i);
-                return;
-            }
-        }
-    }
-});
 
 Template.data.values = function() {
     var selected_table = Session.get('selected_table');
@@ -146,18 +139,31 @@ Template.data.values = function() {
             try {
                 var name = labels[label_sort].name;
                 console.log(label_sort, labels[label_sort], name);
-            var filter = [];
-            found.forEach( function(e){
-                console.log(found);
-                if ( e[ name ].match(group_re) ) filter.push(e);
-            } );
-            return filter;
+                var filter = [];
+                found.forEach( function(e) {
+                    console.log(e, found);
+                    if ( e[ name ].match(group_re) ) filter.push(e);
+                } );
+                return filter;
             } catch(e) { console.error('filter ', e); }
         }
         return found;
         return group ? _.filter(found, function(a) {}) : found;
     }
 };
+
+Template.data_head.events({
+    'click th' : function() {
+        var labels     = Session.get('labels');
+        var label_sort = Session.get('label_sort');
+        for ( var i in labels ) {
+            if ( labels[i].name == this.name ) {
+                Session.set("label_sort", i);
+                return;
+            }
+        }
+    }
+});
 
 Template.value.events({
     'mouseenter tr' : function() {
