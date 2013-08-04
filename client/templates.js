@@ -61,7 +61,7 @@ Template.label.events({
 
 Template.data.events({
     'click caption li a' : function() {
-        Session.set('label_group', '');
+        Session.set('label_group', this + '');
     }
 });
 
@@ -133,12 +133,17 @@ Template.data.values = function() {
         }
 
         var group = Session.get('label_group');
+            console.log(group);
         if (group) {
             var group_re = new RegExp('^' + group, 'i');
             console.log(group_re);
             try {
                 var name = labels[label_sort].name;
                 console.log(label_sort, labels[label_sort], name);
+                return _.filter(found, function(e) {
+                    console.log(e, found);
+                    return e[ name ].match(group_re) ? true : false;
+                } );
                 var filter = [];
                 found.forEach( function(e) {
                     console.log(e, found);
@@ -193,12 +198,6 @@ Template.sidebar.hover = function() {
 Template.example.examples = function() {
     return Session.get('example');
 };
-
-Template.group.events({
-    'click' : function() {
-        Session.set('label_group', this + '');
-    }
-});
 
 Template.group.active = function() {
     return Session.equals('label_group', this+'') ? ' active' : '';
