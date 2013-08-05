@@ -104,9 +104,15 @@ Template.data.values = function() {
 
     var sort = {};
     sort[ labels[ label_sort ].name ] = 1;
+    var group = Session.get('label_group');
+    var name = labels[label_sort].name;
+    var find = { type : selected_label };
+    if ( group && name ) {
+        find[ name ] = { $regex : '^' + group, $option : 'i' };
+    }
     var found = Tables[selected_table]
         .find(
-            { type : selected_label},
+            find,
             { sort : sort }
         );
 
@@ -131,6 +137,10 @@ Template.data.values = function() {
         catch(e) {
             console.error('error calc groups', e);
         }
+    }
+    return found;
+
+    if (0) {
 
         var group = Session.get('label_group');
             console.log(group);
@@ -140,14 +150,13 @@ Template.data.values = function() {
             try {
                 var name = labels[label_sort].name;
                 console.log(label_sort, labels[label_sort], name);
-                return _.filter(found, function(e) {
-                    console.log(e, found);
-                    return e[ name ].match(group_re) ? true : false;
-                } );
                 var filter = [];
-                found.forEach( function(e) {
-                    console.log(e, found);
-                    if ( e[ name ].match(group_re) ) filter.push(e);
+                console.log('count = ', found.count());
+                filter = found.map( function(row) {
+                    console.log(row);
+                    console.log(found);
+                    if ( row[ name ].match(group_re) ) return row;
+                    return;
                 } );
                 return filter;
             } catch(e) { console.error('filter ', e); }
