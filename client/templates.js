@@ -111,17 +111,13 @@ Template.data.values = function() {
     var name = labels[label_sort].name;
     var find = { type : selected_label };
     if ( typeof group === 'string' && name ) {
-        find[ name ] = { $regex : '^[' + group + group.toUpperCase() + ']' };
+        find[ name ] = { $regex : '^\\W*[' + group + group.toUpperCase() + ']' };
     }
-    console.log('find = ', find, group, typeof group);
-    try {
     var found = Tables[selected_table]
         .find(
             find,
             { sort : sort }
         );
-    }
-    catch(e) { console.log('find error', e) }
 
     if (found && typeof group !== 'string') {
         try {
@@ -129,7 +125,7 @@ Template.data.values = function() {
                 var rows   = {};
                 var groups = [];
                 found.forEach(function(row) {
-                    var group = row[ labels[ label_sort ].name ].substr(0,1).toLowerCase();
+                    var group = row[ labels[ label_sort ].name ].match(/^\W*(\w)/)[1].toLowerCase();
 
                     if ( !rows[ group ] ) groups.push(group);
 
