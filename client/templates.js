@@ -54,8 +54,11 @@ Template.label.selected = function() {
 
 Template.label.events({
     'click' : function() {
-        if ( !Session.equals("selected_label", this.name) )
+        if ( !Session.equals("selected_label", this.name) ) {
             Session.set("selected_label", this.name);
+            Session.set('label_group', false);
+            Session.set('groups', []);
+        }
     }
 });
 
