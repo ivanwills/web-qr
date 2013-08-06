@@ -20,10 +20,17 @@ Meteor.Router.add({
         if ( current_table != table ) {
             Session.set('selected_table', table);
             Session.set("selected_label", label);
+            console.log('table unset group');
+            Session.set('label_group', false);
+            Session.set('groups', []);
         }
         else if ( current_label != label ) {
             Session.set("selected_label", label);
+            console.log('label unset group');
+            Session.set('label_group', false);
+            Session.set('groups', []);
         }
+        else { console.log('label and table unchanged', current_label, label) }
         return 'qr';
     },
 });

@@ -61,7 +61,7 @@ Template.label.events({
 
 Template.data.events({
     'click caption li a' : function() {
-        Session.set('label_group', this + '');
+        Session.set('label_group', this instanceof Window ? false : this + '');
     }
 });
 
@@ -107,16 +107,20 @@ Template.data.values = function() {
     var group = Session.get('label_group');
     var name = labels[label_sort].name;
     var find = { type : selected_label };
-    if ( group && name ) {
-        find[ name ] = { $regex : '^' + group, $option : 'i' };
+    if ( typeof group === 'string' && name ) {
+        find[ name ] = { $regex : '^[' + group + group.toUpperCase() + ']' };
     }
+    console.log('find = ', find, group, typeof group);
+    try {
     var found = Tables[selected_table]
         .find(
             find,
             { sort : sort }
         );
+    }
+    catch(e) { console.log('find error', e) }
 
-    if (found) {
+    if (found && typeof group !== 'string') {
         try {
             if ( found.count() > 20 ) {
                 var rows   = {};
