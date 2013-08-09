@@ -215,6 +215,27 @@ Template.group.active = function() {
     return Session.equals('label_group', this+'') ? ' active' : '';
 };
 
+Template.col.value = function() {
+    return values(this);
+};
+
+function values(value) {
+    if ( value instanceof String ) return value;
+
+    var out = '';
+    if ( value instanceof Array ) {
+        if ( value.length == 0 ) return '';
+        for ( var i in value ) {
+            if (out) out = out + ', ';
+            out = out + value[i];
+        }
+        return out;
+    }
+    else if ( this instanceof Window ) return '';
+
+    return value;
+}
+
 var initial_top   = false;
 var initial_width = false;
 var offset        = 50;
