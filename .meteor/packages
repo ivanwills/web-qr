@@ -8,3 +8,6 @@ less
 bootstrap
 accounts-ui
 accounts-password
+standard-app-packages
+page-js-ie-support
+router
