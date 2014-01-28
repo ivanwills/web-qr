@@ -1,11 +1,16 @@
 
-Meteor.Router.add({
-    '/' : function() {
+Backbone.Router.add({
+    routes: {
+        '' : 'default',
+        ':table' : 'table',
+        ':table/:label' : 'label',
+    },
+    'default' : function() {
         if ( !Session.get('qr') ||!Tables || !Tables.qr || !Tables.qr.find().count() ) return 'blank';
         setTimeout(function(){ Meteor.Router.to('/' + Session.get('selected_table') ) }, 100);
         return 'loading';
     },
-    '/:table' : function(table) {
+    'table' : function(table) {
         var current_table = Session.get('selected_table');
         if ( current_table != table ) {
             Session.set('selected_table', table);
@@ -14,7 +19,7 @@ Meteor.Router.add({
         }
         return 'qr';
     },
-    '/:table/:label' : function(table, label) {
+    'label' : function(table, label) {
         var current_table = Session.get('selected_table');
         var current_label = Session.get('selected_label');
         if ( current_table != table ) {
@@ -31,6 +36,8 @@ Meteor.Router.add({
         return 'qr';
     },
 });
+
+Backbone.history.start({pushState: true});
 
 Deps.autorun(function () {
     Meteor.subscribe('qr', Session.get('qr'));
