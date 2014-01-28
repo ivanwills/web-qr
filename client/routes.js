@@ -1,5 +1,9 @@
 
-Backbone.Router.add({
+Tables = {
+    qr : new Meteor.Collection("qr")
+};
+
+var WebRouter = Backbone.Router.extend({
     routes: {
         '' : 'default',
         ':table' : 'table',
@@ -36,19 +40,17 @@ Backbone.Router.add({
         return 'qr';
     },
 });
+var router = new WebRouter();
 
 Backbone.history.start({pushState: true});
 
 Deps.autorun(function () {
     Meteor.subscribe('qr', Session.get('qr'));
 });
-Tables = {
-    qr : new Meteor.Collection("qr")
-};
 
 Deps.autorun(function () {
     Tables.qr.find().forEach(function(table) {
-        // only executed on server initally
+        // only executed on server initially
         Tables[table.collection] = null;
     });
 
