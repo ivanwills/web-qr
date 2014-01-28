@@ -8,9 +8,9 @@ Tables.qr.find().forEach(function(table) {
 });
 
 for ( var table in Tables ) {
-    console.log(table);
     (function(table) {
         Meteor.publish(table, function() {
+            console.log(table, Tables[table].find().count());
             return Tables[table].find();
         });
     })(table);
