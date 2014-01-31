@@ -74,7 +74,7 @@ sub main {
     print "\n";
 
     for my $id (@properties) {
-        my $prop = pQuery("h3#the-$id");
+        my $prop = pQuery("#$id");
         next if ! $prop->size;
         warn $prop->html;
     }
