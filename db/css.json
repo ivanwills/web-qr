@@ -562,6 +562,16 @@
 	},
 	{
 		"type":        "styles",
+		"attribute":   "font-synthesis",
+		"versions":    [3.0],
+		"values":      "none | [ weight || style ] ",
+		"initial_val": "weight style",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
 		"attribute":   "font-smooth",
 		"versions":    [3.0],
 		"values":      "",
