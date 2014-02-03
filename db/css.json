@@ -542,6 +542,26 @@
 	},
 	{
 		"type":        "styles",
+		"attribute":   "font-feature-settings",
+		"versions":    [3.0],
+		"values":      "normal | &lt;feature-tag-value&gt; #",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-kerning",
+		"versions":    [3.0],
+		"values":      "auto | normal | none",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
 		"attribute":   "font-size",
 		"versions":    [],
 		"values":      "&lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit",
@@ -605,6 +625,46 @@
 		"attribute":   "font-variant",
 		"versions":    [],
 		"values":      "<span style=\"font-variant: normal;\">normal</span> | <span style=\"font-variant: small-caps;\">small-caps</span> | <span style=\"font-variant: inherit;\">inherit</span>",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-caps",
+		"versions":    [3.0],
+		"values":      "normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-ligatures",
+		"versions":    [3.0],
+		"values":      "normal | none | [ &lt;common-lig-values&gt; || &lt;discretionary-lig-values&gt; || &lt;historical-lig-values&gt; || &lt;contextual-alt-values&gt; ]",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-numweic",
+		"versions":    [3.0],
+		"values":      "normal | [ &lt;numeric-figure-values&gt; || &lt;numeric-spacing-values&gt; || &lt;numeric-fraction-values&gt; || ordinal || slashed-zero ]",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-position",
+		"versions":    [3.0],
+		"values":      "normal | sub | super",
 		"initial_val": "normal",
 		"applies_to":  "",
 		"description": "",
