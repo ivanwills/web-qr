@@ -562,6 +562,16 @@
 	},
 	{
 		"type":        "styles",
+		"attribute":   "font-language-override",
+		"versions":    [3.0],
+		"values":      "auto | &&lt;string&gt;",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
 		"attribute":   "font-size",
 		"versions":    [],
 		"values":      "&lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit",
@@ -632,9 +642,29 @@
 	},
 	{
 		"type":        "styles",
+		"attribute":   "font-variant-alternates",
+		"versions":    [3.0],
+		"values":      "normal | [ stylistic(&lt;feature-value-name&gt;) || historical-forms || styleset(&lt;feature-value-name&gt; #) || character-variant(&lt;feature-value-name&gt; #) || swash(&lt;feature-value-name&gt;) || ornaments(&lt;feature-value-name&gt;) || annotation(&lt;feature-value-name&gt;) ] ",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
 		"attribute":   "font-variant-caps",
 		"versions":    [3.0],
 		"values":      "normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-east-asian",
+		"versions":    [3.0],
+		"values":      "normal | [ &lt;east-asian-variant-values&gt; || &lt;east-asian-width-values&gt; || ruby ] ",
 		"initial_val": "normal",
 		"applies_to":  "",
 		"description": "",
