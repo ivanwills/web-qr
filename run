@@ -1,0 +1,3 @@
+#!/bin/bash
+
+MONGO_URL=mongodb://localhost:27017/web meteor -p 3050

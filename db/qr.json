@@ -5,14 +5,14 @@
 		"collection" : "css",
 		"sections"   : [
 			{
-				"name":   "styles",
-				"label":  "Styles",
-				"labels": [
-					{ "name": "attribute",   "label": "Name"          },
-					{ "name": "versions",    "label": "Ver"           },
-					{ "name": "values",      "label": "Values"        },
-					{ "name": "initial_val", "label": "Initial Value" },
-					{ "name": "applies_to",  "label": "Applies to"    }
+				"name"   : "styles",
+				"label"  : "Styles",
+				"labels" : [
+					{ "name" : "attribute",   "label" : "Name"          },
+					{ "name" : "versions",    "label" : "Ver"           },
+					{ "name" : "values",      "label" : "Values"        },
+					{ "name" : "initial_val", "label" : "Initial Value" },
+					{ "name" : "applies_to",  "label" : "Applies to"    }
 				],
 				"sort": {
 					"col":   "attribute",
