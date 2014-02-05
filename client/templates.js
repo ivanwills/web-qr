@@ -59,6 +59,7 @@ Template.label.events({
             Session.set('label_group', false);
             Session.set('groups', []);
         }
+        return false;
     }
 });
 

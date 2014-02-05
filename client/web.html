@@ -93,9 +93,13 @@ loading...
                   </tr>
                 <thead>
                 <tbody>
-                    {{#each values}}
-                        {{> value}}
-                    {{/each}}
+                    {{#if values }}
+                        {{#each values}}
+                            {{> value}}
+                        {{/each}}
+                    {{ else }}
+                        loading ...
+                    {{/if}}
                 </tbody>
               </table>
             </div><!--/span-->
