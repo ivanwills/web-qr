@@ -1,0 +1,247 @@
+[
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "A:link",
+		"ver":         "",
+		"description": "Applies to an unvisited hyperlink",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+link\">Link</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "A:visited",
+		"ver":         "",
+		"description": "Applies to a visited hyperlink",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+visited\">Visited</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:first-child",
+		"ver":         "",
+		"description": "Applies to the first child/descendent of an element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+first+child\">First-child</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:active",
+		"ver":         "",
+		"description": "The state during pointer activation ( eg: press and release of a mouse) ",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+active\">Active</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:hover",
+		"ver":         "",
+		"description": "The state during pointer movement within the rendering region of an element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+hover\">Hover</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:focus",
+		"ver":         "",
+		"description": "The state during which an element accepts keyboard input ",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+focus\">Focus</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:lang([Code])",
+		"ver":         "",
+		"description": "The selector content uses the specified language",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "@page :first",
+		"ver":         "",
+		"description": "Rules to apply to the first page",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "@page :left",
+		"ver":         "",
+		"description": "rules to apply to left pages",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "@page :right",
+		"ver":         "",
+		"description": "rules to apply to right pages",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:root",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:nth-child",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:nth-of-type()",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:nth-last-of-type() {}",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:last-child {}",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:first-of-type {}",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:last-of-type {}",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:only-child",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:only-type",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:empty {}",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:target {}",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:not(X) {}",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:enabled",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:disabled",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:checked",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:indeterminate",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:default",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:valid",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:invalid",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:in-range",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:out-of-range",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:required",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:optional",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:read-only",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	},
+	{
+		"type":        "pseudo_class_sel",
+		"selector":    "[Elem]:read-write",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+selector+lang\">Lang</a>"
+	}
+]

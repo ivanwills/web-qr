@@ -1,0 +1,93 @@
+[
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]:before",
+		"ver":         "",
+		"description": "Addresses content that is generated before an element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+before\">Before</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]:after",
+		"ver":         "",
+		"description": "Addresses content that is generated after an element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+after\">After</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]:first-letter",
+		"ver":         "",
+		"description": "Indicates the first rendered letter/character for a block-level element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+first+letter\">First-letter</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]:first-line",
+		"ver":         "",
+		"description": "Indicates the first rendered line on the output device of a block-level element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+first+line\">First-line</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::before",
+		"ver":         "3.0",
+		"description": "Addresses content that is generated before an element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+before\">Before</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::after",
+		"ver":         "3.0",
+		"description": "Addresses content that is generated after an element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+after\">After</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::first-letter",
+		"ver":         "3.0",
+		"description": "Indicates the first rendered letter/character for a block-level element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+first+letter\">First-letter</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::first-line",
+		"ver":         "3.0",
+		"description": "Indicates the first rendered line on the output device of a block-level element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+first+line\">First-line</a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::selection",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+\"></a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::value",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+\"></a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::choices",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+\"></a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::repeat-item",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+\"></a>"
+	},
+	{
+		"type":        "pseudo_eleme_sel",
+		"selector":    "[Elem]::repeat-index",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+\"></a>"
+	}
+]

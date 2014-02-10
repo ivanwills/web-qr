@@ -1,0 +1,184 @@
+[
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Attr] or Elem[Attr]",
+		"ver":         "2.1",
+		"description": "Matches all elements with the specified attribute or all \"Elem\"s with the specified attribute",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+simple+attribute\">Simple Attribute Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Attr=\"value\"] or Elem[Attr=\"value\"]",
+		"ver":         "2.1",
+		"description": "Matches all elements that exactly match the specified attribute/value or all \"Elem\"s with the specified attribute/value",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+attribute+value\">Attribute Value Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Attr^=\"value\"] or Elem[Attr^=\"value\"]",
+		"ver":         "3.0",
+		"description": "Matches all elements with the specified attribute that BEGIN with the specified value. This selector would match attribute values that are equal to it as well as to longer values of which it is a substring.",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+begins-with+attribute+value\">\"Begins-with\" Attribute Value Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Attr$=\"value\"] or Elem[Attr$=\"value\"]",
+		"ver":         "3.0",
+		"description": "Matches all elements with the specified attribute that END with the specified value. This selector would match attribute values that are equal to it as well as to longer values of which it is a substring.",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+ends-with+attribute+value\">\"Ends-with\" Attribute Value Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Attr*=\"value\"] or Elem[Attr*=\"value\"]",
+		"ver":         "3.0",
+		"description": "Matches all element/attribute combinations that have at least one occurrence of the indicated value as a substring.",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+substring-match+attribute_value\">Substring-match Attribute Value Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Attr~=\"value\"] or Elem[Attr~=\"value\"]",
+		"ver":         "2.1",
+		"description": "Allows a portion of an attribute value to be exactly matched where the portions are separated by spaces.",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+one-of-many+attribute+value\">One-of-many Attribute Value Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Attr|=\"value\"] or Elem[Attr|=\"value\"]",
+		"ver":         "2.1",
+		"description": "The attribute value is a hyphen-separated list and begins with \"value\"",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+hyphen+attribute\">Hyphen Attribute Value Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "[Prefix|Attr=\"value\"] or Elem[Prefix|Attr=\"value\"]",
+		"ver":         "2.1",
+		"description": "The attribute is in the specified Namespace prefix.",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+namespace+attribute\">Namespace Attribute Selector</a>"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:root",
+		"ver":         "3",
+		"description": "Matches the document's root element. In HTML, the root element is always the HTML element.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:nth-child(n)",
+		"ver":         "3",
+		"description": "Matches any E element that is the n-th child of its parent.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:nth-last-child(n)",
+		"ver":         "3",
+		"description": "Matches any E element that is the n-th child of its parent, counting from the last child.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:nth-of-type(n)",
+		"ver":         "3",
+		"description": "Matches any E element that is the n-th sibling of its type.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:nth-last-of-type(n)",
+		"ver":         "3",
+		"description": "Matches any E element that is the n-th sibling of its type, counting from the last sibling.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:last-child",
+		"ver":         "3",
+		"description": "Matches any E element that is the last child of its parent.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:first-of-type",
+		"ver":         "3",
+		"description": "Matches any E element that is the first sibling of its type.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:last-of-type",
+		"ver":         "3",
+		"description": "Matches any E element that is the last sibling of its type.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:only-child",
+		"ver":         "3",
+		"description": "Matches any E element that is the only child of its parent.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:only-of-type",
+		"ver":         "3",
+		"description": "Matches any E element that is the only sibling of its type.",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:empty",
+		"ver":         "3",
+		"description": "Matches any E element that has no children (including text nodes).",
+		"name":        "Structural pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:target",
+		"ver":         "3",
+		"description": "Matches an E element that is the target of the referring URL.",
+		"name":        "Target pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:enabled",
+		"ver":         "3",
+		"description": "Matches any user interface element (form control) E that is enabled.",
+		"name":        "UI element states pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:disabled",
+		"ver":         "3",
+		"description": "Matches any user interface element (form control) E that is disabled.",
+		"name":        "UI element states pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:checked",
+		"ver":         "3",
+		"description": "Matches any user interface element (form control) E that is checked.",
+		"name":        "UI element states pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E::selection",
+		"ver":         "3",
+		"description": "Matches the portion of an element E that is currently selected or highlighted by the user.",
+		"name":        "UI element fragments pseudo-element"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E:not(s)",
+		"ver":         "3",
+		"description": "Matches any E element that does not match the simple selector s.",
+		"name":        "Negation pseudo-class"
+	},
+	{
+		"type":        "attrib_sel",
+		"selector":    "E ~ F",
+		"ver":         "3",
+		"description": "Matches any F element that is preceded by an E element.",
+		"name":        "General sibling combinator"
+	}
+]

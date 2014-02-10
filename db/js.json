@@ -1,2 +1,30 @@
 [
+	{
+		"name": "js_date",
+		"label":  "Date",
+		"labels": [
+			{ "name": "selector",    "label": "Selector"    },
+			{ "name": "ver",         "label": "Ver"         },
+			{ "name": "description", "label": "Description" },
+			{ "name": "name",        "label": "Name"        }
+		],
+		"sort": {
+			"col":   "selector",
+			"order": "asc"
+		}
+	},
+	{
+		"name": "js_json",
+		"label":  "JSON",
+		"labels": [
+			{ "name": "selector",    "label": "Selector"    },
+			{ "name": "ver",         "label": "Ver"         },
+			{ "name": "description", "label": "Description" },
+			{ "name": "name",        "label": "Name"        }
+		],
+		"sort": {
+			"col":   "selector",
+			"order": "asc"
+		}
+	}
 ]

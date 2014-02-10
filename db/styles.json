@@ -1,0 +1,1728 @@
+[
+	{
+		"type":        "styles",
+		"attribute":   "appearance",
+		"versions":    [3.0],
+		"values":      "none | button | button-arrow-down | button-arrow-next | button-arrow-previous | button-arrow-up | button-bevel | button-focus | caret | checkbox | checkbox-container | checkbox-label | checkmenuitem | dualbutton | groupbox | listbox | listitem | menuarrow | menubar | menucheckbox | menuimage | menuitem | menuitemtext | menulist | menulist-button | menulist-text | menulist-textfield | menupopup | menuradio | menuseparator | meterbar | meterchunk | progressbar | progressbar-vertical | progresschunk | progresschunk-vertical | radio | radio-container | radio-label | radiomenuitem | resizer | resizerpanel | scale-horizontal | scalethumbend | scalethumb-horizontal | scalethumbstart | scalethumbtick | scalethumb-vertical | scale-vertical | scrollbarbutton-down | scrollbarbutton-left | scrollbarbutton-right | scrollbarbutton-up | scrollbarthumb-horizontal | scrollbarthumb-vertical | scrollbartrack-horizontal | scrollbartrack-vertical | searchfield | separator | sheet | spinner | spinner-downbutton | spinner-textfield | spinner-upbutton | splitter | statusbar | statusbarpanel | tab | tabpanel | tabpanels | tab-scroll-arrow-back | tab-scroll-arrow-forward | textfield | textfield-multiline | toolbar | toolbarbutton | toolbarbutton-dropdown | toolbargripper | toolbox | tooltip | treeheader | treeheadercell | treeheadersortarrow | treeitem | treeline | treetwisty | treetwistyopen | treeview",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background",
+		"versions":    [1, 2],
+		"values":      "[&lt;\"background-color'&gt; || &lt;'background-image'&gt; || &lt;'background-repeat'&gt; || &lt;'background-attachment'&gt; || &lt;'background-position\"&gt; ] | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "Sets most of the background properties in one go",
+		"examples":    "<div style=\"background: red\">background</div>"
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-attachment",
+		"versions":    [],
+		"values":      "scroll | fixed | inherit",
+		"initial_val": "scroll",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-break",
+		"versions":    [3.0],
+		"values":      "bounding-box | each-box | continuous",
+		"initial_val": "continuous",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-clip",
+		"versions":    [3.0],
+		"values":      "[border | padding] [, [border | padding]]*",
+		"initial_val": "border",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-color",
+		"versions":    [],
+		"values":      "&lt;color&gt; | transparent | inherit",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-image",
+		"versions":    [],
+		"values":      "&lt;url&gt; | none | inherit",
+		"initial_val": "transparent",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-origin",
+		"versions":    [3.0],
+		"values":      "[border | padding | content] [, [border | padding | content]]*",
+		"initial_val": "padding",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-position",
+		"versions":    [],
+		"values":      "[ [ &lt;percentage&gt; | &lt;length&gt; ]{2,3} | [ [top|center|bottom] || [left|center|right] ] ] | inherit",
+		"initial_val": "0% 0%",
+		"applies_to":  "block-level &amp; replaced elem.",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-repeat",
+		"versions":    [],
+		"values":      "repeat | repeat-x | repeat-y | no-repeat | inherit",
+		"initial_val": "repeat",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "background-size",
+		"versions":    [3.0],
+		"values":      "[ [ &lt;length&gt; | &lt;percentage&gt; | auto ]{1,2} || round ] [ [ , [ &lt;length&gt; | &lt;percentage&gt; | auto ]{1,2} ] || round ]*",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border",
+		"versions":    [],
+		"values":      "[ &lt;\"border-width'&gt; || &lt;'border-style'&gt; || &lt;'border-color\"&gt; ] | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-break",
+		"versions":    [3.0],
+		"values":      "&lt;'border-width'&gt; || &lt;border-style&gt; || &lt;color&gt;",
+		"initial_val": "none",
+		"applies_to":  "elements with a border",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-collapse",
+		"versions":    [],
+		"values":      "collapse | seperate | inherit",
+		"initial_val": "collapse",
+		"applies_to":  "table/inline-table",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-color",
+		"versions":    [],
+		"values":      "&lt;color&gt;{1,4} | transparent | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-image",
+		"versions":    [3.0],
+		"values":      "&lt;uri&gt; [ , &lt;uri&gt; ]* | none",
+		"initial_val": "none",
+		"applies_to":  "all elements ",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-radius",
+		"versions":    [3.0],
+		"values":      "&lt;length&gt; &lt;length&gt;?",
+		"initial_val": "0",
+		"applies_to":  "all elements, except table element when 'border-collapse' is 'collapse'",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-spacing",
+		"versions":    [],
+		"values":      "&lt;length&gt; &lt;length&gt;? | inherit",
+		"initial_val": "0",
+		"applies_to":  "table/inline-table",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-style",
+		"versions":    [],
+		"values":      "&lt;border-style&gt;{1,4} | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-top",
+		"versions":    [],
+		"values":      "[ &lt;\"border-width'&gt; || &lt;'border-style'&gt; || &lt;'border-color\"&gt; ] | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"same":        [ "border-right', 'border-bottom', 'border-left" ],
+		"description": ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-top-color",
+		"versions":    [],
+		"values":      "&lt;color&gt; | transparent | inherit",
+		"initial_val": "the value of the \"color\" property",
+		"applies_to":  "",
+		"same":        [ "border-right-color', 'border-bottom-color', 'border-left-color" ],
+		"description": ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-top-style",
+		"versions":    [],
+		"values":      "&lt;border-style&gt; | <span style=\"border-style: inherit\">inherit</span> | <span style=\"border-style: dashed\">dashed</span> | <span style=\"border-style: dotted\">dotted</span> | <span style=\"border-style: double\">double</span> | <span style=\"border-style: groove\">groove</span> | <span style=\"border-style: hidden\">hidden | <span style=\"border-style: inset\">inset</span> | <span style=\"border-style: outset\">outset</span> | <span style=\"border-style: ridge\">ridge</span> | <span style=\"border-style: solid\">solid</span> | <span style=\"border-style: none\">none</span>",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"same":        [ "border-right-style', 'border-bottom-style', 'border-left-style" ],
+		"description": ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-top-width",
+		"versions":    [],
+		"values":      "&lt;border-width&gt; | inherit",
+		"initial_val": "medium",
+		"applies_to":  "",
+		"same":        [ "border-right-width', 'border-bottom-width', 'border-left-width" ],
+		"description": "<span style=\"border: solid 1px black\">1px</span> | <span style=\"border: solid 5px black\">5px</span> | <span style=\"border: solid 1% black\">1%</span> | <span style=\"border: solid 5% black\">5%</span> | <span style=\"border: solid 0.1em black\">0.1em</span> | <span style=\"border: solid 0.5em black\">0.5em</span> | <span style=\"border: solid 1pt black\">1pt</span> | <span style=\"border: solid 5pt black\">5pt</span> <!--| <span style=\"border: solid 1px black\">1px</span> | <span style=\"border: solid 5px black\">5px</span> | <span style=\"border: solid 1px black\">1px</span> | <span style=\"border: solid 5px black\">5px</span> -->",
+		"examples":    "top"
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-width",
+		"versions":    [],
+		"values":      "&lt;length&gt;{1,4} | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-radius",
+		"versions":    [3],
+		"values":      "&lt;radius&gt;{1,4}",
+		"initial_val": "0",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "border-radius-bottomleft",
+		"versions":    [3],
+		"values":      "&lt;radius&gt;",
+		"initial_val": "0",
+		"applies_to":  "all elements",
+		"same":        [ "border-radius-bottomright', 'border-radius-topleft', 'border-radius-topright" ],
+		"description": ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "bottom",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "positioned elem.",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "box-sizing",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "box-shadow",
+		"versions":    [3.0],
+		"values":      "none | [ <length> <length> <length>? || <color> ] [ , <length> <length> <length>? || <color> ]+",
+		"initial_val": "none",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "caption-side",
+		"versions":    [],
+		"values":      "top | bottom | left | right | inherit",
+		"initial_val": "top",
+		"applies_to":  "table-caption",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "clear",
+		"versions":    [],
+		"values":      "none | left | right | both | inherit",
+		"initial_val": "none",
+		"applies_to":  "block-level elem.",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "clip",
+		"versions":    [],
+		"values":      "&lt;shape&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "block-level &amp; replaced elem.",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "color",
+		"versions":    [],
+		"values":      "&lt;color&gt; | inherit",
+		"initial_val": "browser dependent",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "color-profile",
+		"versions":    [],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "content",
+		"versions":    [],
+		"values":      "[ &lt;string&gt; | &lt;url&gt; | &lt;counter&gt; | attr(X) | open-quote | close-quote | no-close-quote ]+ | inherit",
+		"initial_val": "empth string",
+		"applies_to":  ":before &amp; :after pseudo elem.",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "counter-increment",
+		"versions":    [],
+		"values":      "[ &lt;identifier&gt; &lt;integer&gt;? ]+ | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "column-break-after",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "column-break-before",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "column-count",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "column-gap",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "column-rule",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "columns",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "counter-reset",
+		"versions":    [],
+		"values":      "[ &lt;identifier&gt; &lt;integer&gt;? ]+ | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "cursor",
+		"versions":    [],
+		"values":      "[[&lt;uri&gt;,]* [auto | <span style=\"cursor:crosshair;\">crosshair</span> | <span style=\"cursor:default\">default</span> | <span style=\"cursor:pointer\">pointer</span> | <span style=\"cursor:move\">move</span> | <span style=\"cursor:e-resize\">e-resize</span> | <span style=\"cursor:ne-resize\">ne-resize</span> | <span style=\"cursor:nw-resize\">nw-resize</span> | <span style=\"cursor:n-resize\">n-resize</span> | <span style=\"cursor:se-resize\">se-resize</span> | <span style=\"cursor:sw-resize\">sw-resize</span> | <span style=\"cursor:s-resize\">s-resize</span> | <span style=\"cursor:w-resize\">w-resize</span> | <span style=\"cursor:text\">text</span> | <span style=\"cursor:wait\">wait</span> | <span style=\"cursor:help\">help</span>] ] | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "direction",
+		"versions":    [],
+		"values":      "ltr | rtl | inherit",
+		"initial_val": "ltr",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "display",
+		"versions":    [],
+		"values":      "inline | block | list-item | run-in | compact | marker | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit",
+		"initial_val": "inline",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "empty-cells",
+		"versions":    [],
+		"values":      "show | hide | inherit",
+		"initial_val": "show",
+		"applies_to":  "table-cell elem",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "fit",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "fit-position",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "float",
+		"versions":    [],
+		"values":      "left | right | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font",
+		"versions":    [],
+		"values":      "[[ &lt;\"font-style'&gt; || &lt;'font-variant'&gt; || &lt;'font-wieight'&gt;]? &lt;'font-size'&gt; [ | &lt;'line-height'&gt;? &lt;'font-family\"&gt;] | caption | icon | menu | message-box | small-caption | status-bar | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-effect",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-emphasize",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-family",
+		"versions":    [],
+		"values":      "[ [ &lt;family-name&gt; | &lt;generic-family&gt;],]* [&lt;family-name&gt; | &lt;generic-family&gt;] | inherit",
+		"initial_val": "browser dependent",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-feature-settings",
+		"versions":    [3.0],
+		"values":      "normal | &lt;feature-tag-value&gt; #",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-kerning",
+		"versions":    [3.0],
+		"values":      "auto | normal | none",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-language-override",
+		"versions":    [3.0],
+		"values":      "auto | &&lt;string&gt;",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-size",
+		"versions":    [],
+		"values":      "&lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit",
+		"initial_val": "medium",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-size-adjust",
+		"versions":    [3.0],
+		"values":      "&lt;number&gt; | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-synthesis",
+		"versions":    [3.0],
+		"values":      "none | [ weight || style ] ",
+		"initial_val": "weight style",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-smooth",
+		"versions":    ["ff"],
+		"values":      "font-smooth:  auto | never | always | [ &lt;absolute size&gt; || &lt;length&gt; ]",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-stretch",
+		"versions":    [3.0],
+		"values":      "<span style=\"font-stretch:normal\">normal</span> | <span style=\"font-stretch:wider\">wider</span> | <span style=\"font-stretch:ultra-condensed\">ultra-condensed</span> | <span style=\"font-stretch:extra-condensed\">extra-condensed</span> | <span style=\"font-stretch:condensed\">condensed</span> | <span style=\"font-stretch:semi-condensed\">semi-condensed</span> | <span style=\"font-stretch:semi-expanded\">semi-expanded</span> | <span style=\"font-stretch:expanded\">expanded</span> | <span style=\"font-stretch:extra-expanded\">extra-expanded</span> | <span style=\"font-stretch:ultra-expanded\">ultra-expanded</span> | <span style=\"font-stretch:inhreit\">inhreit</span>",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    "<span style=\"normal\">normal</span><span style=\"wider\">wider</span><span style=\"ultra-condensed\">ultra-condensed</span><span style=\"extra-condensed\">extra-condensed</span><span style=\"condensed\">condensed</span><span style=\"semi-condensed\">semi-condensed</span><span style=\"semi-expanded\">semi-expanded</span><span style=\"expanded\">expanded</span><span style=\"extra-expanded\"><extra-expanded/span><span style=\"ultra-expanded\">ultra-expanded</span><span style=\"inhreit\">inhreit</span>"
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-style",
+		"versions":    [],
+		"values":      "<span style=\"font-style: normal;\">normal</span> | <span style=\"font-style: italic;\">italic</span> | <span style=\"font-style: oblique;\">oblique</span> | <span style=\"font-style: inherit;\">inherit</span>",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant",
+		"versions":    [],
+		"values":      "<span style=\"font-variant: normal;\">normal</span> | <span style=\"font-variant: small-caps;\">small-caps</span> | <span style=\"font-variant: inherit;\">inherit</span>",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-alternates",
+		"versions":    [3.0],
+		"values":      "normal | [ stylistic(&lt;feature-value-name&gt;) || historical-forms || styleset(&lt;feature-value-name&gt; #) || character-variant(&lt;feature-value-name&gt; #) || swash(&lt;feature-value-name&gt;) || ornaments(&lt;feature-value-name&gt;) || annotation(&lt;feature-value-name&gt;) ] ",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-caps",
+		"versions":    [3.0],
+		"values":      "normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-east-asian",
+		"versions":    [3.0],
+		"values":      "normal | [ &lt;east-asian-variant-values&gt; || &lt;east-asian-width-values&gt; || ruby ] ",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-ligatures",
+		"versions":    [3.0],
+		"values":      "normal | none | [ &lt;common-lig-values&gt; || &lt;discretionary-lig-values&gt; || &lt;historical-lig-values&gt; || &lt;contextual-alt-values&gt; ]",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-numweic",
+		"versions":    [3.0],
+		"values":      "normal | [ &lt;numeric-figure-values&gt; || &lt;numeric-spacing-values&gt; || &lt;numeric-fraction-values&gt; || ordinal || slashed-zero ]",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-variant-position",
+		"versions":    [3.0],
+		"values":      "normal | sub | super",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "font-weight",
+		"versions":    [],
+		"values":      "<span style=\"font-weight: normal;\">normal</span> | <span style=\"font-weight: bold;\">bold</span> | <span style=\"font-weight: bolder;\">bolder</span> | <span style=\"font-weight: lighter;\">lighter</span> | <span style=\"font-weight: 100;\">100</span> | <span style=\"font-weight: 200;\">200</span> | <span style=\"font-weight: 300;\">300</span> | <span style=\"font-weight: 400;\">400</span> | <span style=\"font-weight: 500;\">500</span> | <span style=\"font-weight: 600;\">600</span> | <span style=\"font-weight: 700;\">700</span> | <span style=\"font-weight: 800;\">800</span> | <span style=\"font-weight: 900;\">900</span> | <span style=\"font-weight: inherit;\">inherit</span>",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "hanging-punctuation",
+		"versions":    [3.0],
+		"values":      "none | [ first || [ force-end | allow-end ] || last ]",
+		"initial_val": "none",
+		"applies_to":  "inline elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "height",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "icon",
+		"versions":    [3.0],
+		"values":      "auto | <uri> [, <uri>]* | inherit ",
+		"initial_val": "auto",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "image-orientation",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "0deg",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "left",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "letter-spacing",
+		"versions":    [],
+		"values":      "normal | &lt;length&gt; | inherit",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "line-height",
+		"versions":    [],
+		"values":      "normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "list-style",
+		"versions":    [],
+		"values":      "[ &lt;\"list-style-type'&gt; || &lt;'list-style-position'&gt; || &lt;'list-style-image\"&gt; ] | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "list-style-image",
+		"versions":    [],
+		"values":      "&lt;uri&gt; | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "list-style-position",
+		"versions":    [],
+		"values":      "inside | outside | inherit",
+		"initial_val": "outside",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "list-style-type",
+		"versions":    [],
+		"values":      "disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-alpha | upper-alpha | upper-latin | hebrew | armenian | georgian | cjk-ideographic | hiragana | katakana | hiraganairoha | none | inherit",
+		"initial_val": "disc",
+		"applies_to":  "",
+		"description": "<ul style=\"list-style-type: disk                \"><li>disc                </li><li>pt 2</li></ul><ul style=\"list-style-type: circle              \"><li>circle              </li><li>pt 2</li></ul><ul style=\"list-style-type: square              \"><li>square              </li><li>pt 2</li></ul><ul style=\"list-style-type: decimal             \"><li>decimal             </li><li>pt 2</li></ul><ul style=\"list-style-type: decimal-leading-zero\"><li>decimal-leading-zero</li><li>pt 2</li></ul><ul style=\"list-style-type: lower-roman         \"><li>lower-roman         </li><li>pt 2</li></ul><ul style=\"list-style-type: upper-roman         \"><li>upper-roman         </li><li>pt 2</li></ul><ul style=\"list-style-type: lower-alpha         \"><li>lower-alpha         </li><li>pt 2</li></ul><ul style=\"list-style-type: upper-alpha         \"><li>upper-alpha         </li><li>pt 2</li></ul><ul style=\"list-style-type: upper-latin         \"><li>upper-latin         </li><li>pt 2</li></ul><ul style=\"list-style-type: hebrew              \"><li>hebrew              </li><li>pt 2</li></ul><ul style=\"list-style-type: armenian            \"><li>armenian            </li><li>pt 2</li></ul><ul style=\"list-style-type: georgian            \"><li>georgian            </li><li>pt 2</li></ul><ul style=\"list-style-type: cjk-ideographic     \"><li>cjk-ideographic     </li><li>pt 2</li></ul><ul style=\"list-style-type: hiragana            \"><li>hiragana            </li><li>pt 2</li></ul><ul style=\"list-style-type: katakana            \"><li>katakana            </li><li>pt 2</li></ul><ul style=\"list-style-type: hiraganairoha       \"><li>hiraganairoha       </li><li>pt 2</li></ul><ul style=\"list-style-type: none                \"><li>none                </li><li>pt 2</li></ul><ul style=\"list-style-type: inherit             \"><li>inherit             </li><li>pt 2</li></ul>",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "margin",
+		"versions":    [],
+		"values":      "&lt;margin-width&gt;{1,4} | auto | inherit",
+		"initial_val": "0",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "margin-top",
+		"versions":    [],
+		"values":      "&lt;margin-width&gt; | auto | inherit",
+		"initial_val": "0",
+		"applies_to":  "",
+		"same":        [ "margin-right', 'margin-bottom', 'margin-left" ],
+		"description": ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "marker-offset",
+		"versions":    [],
+		"values":      "&lt;length&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "marks",
+		"versions":    [],
+		"values":      "[ crop || cross ] | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "max-height",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "max-width",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | none | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "min-height",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | inherit",
+		"initial_val": "0",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "min-width",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | inherit",
+		"initial_val": "browser dependent",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "-moz-border-radius",
+		"versions":    [],
+		"values":      "&lt;radius&gt;{1,4}",
+		"initial_val": "0",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "-moz-border-radius-bottomleft",
+		"versions":    [],
+		"values":      "&lt;radius&gt;",
+		"initial_val": "0",
+		"applies_to":  "all elements",
+		"same":        [ "-moz-border-radius-bottomright', '-moz-border-radius-topleft', '-moz-border-radius-topright" ],
+		"description": ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "-moz-opacity",
+		"versions":    [],
+		"values":      "&lt;alphavalue&gt;",
+		"initial_val": "1",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "nav-down",
+		"versions":    [3.0],
+		"values":      "auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit ",
+		"initial_val": "auto",
+		"applies_to":  "all enabled elements",
+		"medit":       "interactive",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "nav-index",
+		"versions":    [3.0],
+		"values":      "auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit ",
+		"initial_val": "auto",
+		"applies_to":  "all enabled elements",
+		"medit":       "interactive",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "nav-left",
+		"versions":    [3.0],
+		"values":      "auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit ",
+		"initial_val": "auto",
+		"applies_to":  "all enabled elements",
+		"medit":       "interactive",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "nav-right",
+		"versions":    [3.0],
+		"values":      "auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit ",
+		"initial_val": "auto",
+		"applies_to":  "all enabled elements",
+		"medit":       "interactive",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "nav-up",
+		"versions":    [3.0],
+		"values":      "auto | &lt;id&gt; [ current | root | &lt;target-name&gt; ]? | inherit ",
+		"initial_val": "auto",
+		"applies_to":  "all enabled elements",
+		"medit":       "interactive",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "orphans",
+		"versions":    [],
+		"values":      "&lt;integer&gt; | inherit",
+		"initial_val": "2",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "outline",
+		"versions":    [],
+		"values":      "[ &lt;\"outline-color'&gt; || &lt;'outline-style'&gt; || &lt;'outline-width\"&gt;] | inherit",
+		"initial_val": "See individual properties",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "outline-color",
+		"versions":    [],
+		"values":      "&lt;color&gt; | invert | inherit",
+		"initial_val": "invert",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "outline-offset",
+		"versions":    [3.0],
+		"values":      "&lt;length&gt;",
+		"initial_val": "0",
+		"applies_to":  "all elements",
+		"media":       "visual, interactive",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "outline-style",
+		"versions":    [],
+		"values":      "&lt;border-style&gt; | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "outline-width",
+		"versions":    [],
+		"values":      "&lt;border-width&gt; | inherit",
+		"initial_val": "medium",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "outline-radius",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "overflow",
+		"versions":    [],
+		"values":      "visible | hidden | scroll | auto | inherit",
+		"initial_val": "visible",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "overflow-x",
+		"versions":    [3.0],
+		"values":      "visible | hidden | scroll | auto | inherit",
+		"initial_val": "visible",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "overflow-y",
+		"versions":    [3.0],
+		"values":      "visible | hidden | scroll | auto | inherit",
+		"initial_val": "visible",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "padding",
+		"versions":    [],
+		"values":      "&lt;padding-width&gt;{1,4} | inherit",
+		"initial_val": "0",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "padding-top",
+		"versions":    [],
+		"values":      "&lt;padding-width&gt; | inherit",
+		"initial_val": "0",
+		"applies_to":  "",
+		"same":        [ "padding-right', 'padding-bottom', 'padding-left" ],
+		"description": ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "page",
+		"versions":    [3.0],
+		"values":      "&lt;identifier&gt; | auto",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "page-break-after",
+		"versions":    [3.0],
+		"values":      "auto | always | avoid | left | right | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "page-break-before",
+		"versions":    [3.0],
+		"values":      "auto | always | avoid | left | right | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "page-break-inside",
+		"versions":    [],
+		"values":      "avoid | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "position",
+		"versions":    [],
+		"values":      "static | relative | absolute | fixed | inherit",
+		"initial_val": "static",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "punctuation-trim",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "resize",
+		"versions":    [3.0],
+		"values":      "none | both | horizontal | vertical",
+		"initial_val": "none",
+		"applies_to":  "elements with overflow other than visible",
+		"media":       "visual",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "ruby-align",
+		"versions":    [3.0],
+		"values":      "start | center | space-between | space-around",
+		"initial_val": "space-around ",
+		"applies_to":  "ruby bases, ruby annotations, ruby base containers, ruby annotation containers",
+		"media":       "visual",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "ruby-overhang",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"media":       "visual",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "ruby-position",
+		"versions":    [3.0],
+		"values":      "[ over | under | inter-character ] && [ right | left ]",
+		"initial_val": "over right",
+		"applies_to":  "ruby annotation containers",
+		"media":       "visual",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "quotes",
+		"versions":    [],
+		"values":      "[ &lt;string&gt; &lt;string&gt;]+ | none | inherit",
+		"initial_val": "browser dependent",
+		"applies_to":  "",
+		"media":       "visual",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "render-intent",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"media":       "visual",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "right",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "size",
+		"versions":    [3.0],
+		"values":      "&lt;length&gt;{1,2} | auto | portrait | landscape | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "table-layout",
+		"versions":    [],
+		"values":      "auto | fixed | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-align",
+		"versions":    [],
+		"values":      "left | right | center | &lt;string&gt; | inherit",
+		"initial_val": "7)",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-align-last",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-decoration",
+		"versions":    [],
+		"values":      "none | [<span style=\"text-decoration: underline;\">underline</span> || <span style=\"text-decoration: overline;\">overline</span> || <span style=\"text-decoration: line-through;\">line-through</span> || <span style=\"text-decoration: blink;\">blink</span> ] | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-emphasis",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-indent",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | inherit",
+		"initial_val": "0",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-justify",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-outline",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-overflow",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-shadow",
+		"versions":    [3.0],
+		"values":      "none | [ &lt;color&gt; || &lt;length&gt;&lt;length&gt;&lt;length&gt;?,]* [&lt;color&gt; || &lt;length&gt;&lt;length&gt;&lt;length&gt;?] | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-transform",
+		"versions":    [],
+		"values":      "<span style=\"text-transform: capatlize;\">capatlize</span> | <span style=\"text-transform: uppercase;\">uppercase</span> | <span style=\"text-transform: lowercase;\">lowercase</span> | <span style=\"text-transform: none;\">none</span> | <span style=\"text-transform: inherit;\">inherit</span>",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "text-wrap",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "top",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "unicode-bidi",
+		"versions":    [],
+		"values":      "normal | embed | bidi-overide | inherit",
+		"initial_val": "none",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "vertical-align",
+		"versions":    [],
+		"values":      "baseline | sub | super | top | text-top | middle | bottom | text-bottom | &lt;percentage&gt; | &lt;length&gt; | inherit",
+		"initial_val": "baseline",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "visibility",
+		"versions":    [],
+		"values":      "visible | hidden | collapse | inherit",
+		"initial_val": "inherit",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "white-space",
+		"versions":    [],
+		"values":      "normal | pre | nowrap | inherit",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "windows",
+		"versions":    [],
+		"values":      "&lt;integer&gt; | inherit",
+		"initial_val": "2",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "width",
+		"versions":    [],
+		"values":      "&lt;length&gt; | &lt;percentage&gt; | auto | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "word-break",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "word-spacing",
+		"versions":    [],
+		"values":      "normal | &lt;length&gt; | inherit",
+		"initial_val": "normal",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "word-wrap",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "writting-mode",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "z-index",
+		"versions":    [],
+		"values":      "auto | &lt;integer&gt; | inherit",
+		"initial_val": "auto",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "zoom",
+		"versions":    [],
+		"values":      "&lt;scale&gt; | &lt;percentage&gt; | normal",
+		"initial_val": "normal",
+		"applies_to":  "all elements",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-volume",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-balance",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "speak",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "pause",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "pause-after",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "pause-before",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "rest",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "rest-before",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "rest-after",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "cue",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "cue-after",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "cue-before",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "mark",
+		"versions":    [3.0],
+		"values":      "[ &lt;'mark-before'&gt; || &lt;'mark-after'&gt; ]",
+		"initial_val": "not defined for shorthand properties",
+		"applies_to":  "all elements",
+		"media":       "speech",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "mark-before",
+		"versions":    [3.0],
+		"values":      "&lt;string&gt;",
+		"initial_val": "none",
+		"applies_to":  "all elements",
+		"media":       "speech",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "mark-after",
+		"versions":    [3.0],
+		"values":      "&lt;string&gt;",
+		"initial_val": "none",
+		"applies_to":  "all elements",
+		"media":       "speech",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-family",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-rate",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-pitch",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-pitch-range",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-stress",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "voice-duration",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	},
+	{
+		"type":        "styles",
+		"attribute":   "phonemes ",
+		"versions":    [3.0],
+		"values":      "",
+		"initial_val": "",
+		"applies_to":  "",
+		"description": "",
+		"examples":    ""
+	}
+]

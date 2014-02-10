@@ -1,0 +1,32 @@
+[
+	{
+		"type":   "units",
+		"unit":   "&lt;color&gt;",
+		"values": "colour name, transparent, #ABC, #0F00F0, rgb(15, 0, 240), rgb(6%, 0%, 94%), rgba(r,g,b,a), hsl(h,s,l), hsla(h,s,l,a)"
+	},
+	{
+		"type":   "units",
+		"unit":   "&lt;length&gt;",
+		"values": "\"Absolute\": in, cm, mm, pi, pt \"Relative\": px, em, ex ? pc"
+	},
+	{
+		"type":   "units",
+		"unit":   "&lt;percent&gt;",
+		"values": "%"
+	},
+	{
+		"type":   "units",
+		"unit":   "&lt;scale&gt;",
+		"values": "?"
+	},
+	{
+		"type":   "units",
+		"unit":   "&lt;URI&gt; or &lt;URL&gt;",
+		"values": "url(\"actualURL\")"
+	},
+	{
+		"type":   "units",
+		"unit":   "&lt;generic-family&gt;",
+		"values": "serif, sans-serif, ..."
+	}
+]
