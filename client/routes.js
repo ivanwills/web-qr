@@ -51,12 +51,14 @@ Deps.autorun(function () {
     });
 
     for ( var table in Tables ) {
-        //if ( Tables[table] ) continue;
+        console.info('found ', table);
 
         Deps.autorun(function () {
             Meteor.subscribe(table, Session.get(table));
         });
-        //Tables[table] = new Meteor.Collection(table);;
+
+        if ( Tables[table] ) continue;
+        Tables[table] = new Meteor.Collection(table);;
     }
     Session.set('qr', true);
 });

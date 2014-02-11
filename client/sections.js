@@ -25,9 +25,10 @@ Template.sidebar.labels = function(a) {
     if ( !Tables || !collection )
         return;
 
-    var data = Tables.qr.find( { collection : collection } );
-    data.forEach(function(d) { data = d });
-    return data.sections;
+    var table = Tables[Session.get('selected_table')];
+    // TODO if table isn't yet created this will not load need to cause
+    // to trigger this to change.
+    return table ? table.find() : [];
 };
 
 Template.sidebar.hover = function() {
