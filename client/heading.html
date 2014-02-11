@@ -1,0 +1,63 @@
+
+<template name="data">
+        <div class="span10">
+          <div class="row-fluid">
+            <div class="span12">
+              <table class="table table-striped table-bordered table-hover table-condensed">
+                {{#if groups }}
+                <caption>
+                    <ul class="tabs">
+                        <li class="tab"><a href="#" data-sort="">All</a></li>
+                        {{#each groups}}{{> group}}{{/each}}
+                    </ul>
+                </caption>
+                {{/if}}
+                <thead>
+                  <tr>
+                    {{#each data_heads}}
+                        {{> data_head}}
+                    {{/each}}
+                  </tr>
+                <thead>
+                <tbody>
+                    {{#if values }}
+                        {{#each values}}
+                            {{> value}}
+                        {{/each}}
+                    {{ else }}
+                        loading ...
+                    {{/if}}
+                </tbody>
+              </table>
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!--/span-->
+</template>
+
+<template name="data_head">
+    <th data-sort="{{name}}">{{label}}</th>
+</template>
+
+<template name="group">
+    <li class="tab {{ active }}"><a href="#{{this}}" data-sort="{{this}}">{{this}}</a></li>
+</template>
+
+<template name="value">
+<tr>
+    {{#each value_cols}}
+        {{> col}}
+    {{/each}}
+<tr>
+</template>
+
+<template name="col">
+    <td>{{{value}}}</td>
+</template>
+
+<template name="example">
+<div id="example" class="well well-small" style="pos-ition: fixed; wi-dth: 14.5299%">
+        <b>Example</b><br/>
+        {{{ examples }}}
+    </div>
+</template>
+

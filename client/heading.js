@@ -1,68 +1,5 @@
 Session.set('example', false);
 
-Template.nav.tables = function () {
-    // Read the collections specified in qr
-    Tables.qr.find({}, {}).forEach(function(table) {
-        var coll = table.collection;
-        if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
-    });
-
-    return Tables.qr.find({}, { sort : { pos : 1 } });
-};
-
-Template.sections.selected = function() {
-    if ( !Session.get('selected_table') ) {
-        Session.set('selected_table', this.collection);
-    }
-    return Session.equals("selected_table", this.collection) ? "active" : '';
-};
-
-Template.sections.table = function() {
-    return this.collection;
-};
-
-Template.sections.events({
-    'click' : function() {
-        if ( !Session.equals("selected_table", this.collection) ) {
-            Session.set("selected_table", this.collection);
-            Session.set("selected_label", null);
-            Session.set("labels", null);
-        }
-    }
-});
-
-Template.sidebar.labels = function(a) {
-    var collection = Session.get('selected_table');
-    if ( !Tables || !collection )
-        return;
-
-    var data = Tables.qr.find( { collection : collection } );
-    data.forEach(function(d) { data = d });
-    return data.sections;
-};
-
-Template.label.table = function(a) {
-    return Session.get('selected_table');
-};
-
-Template.label.selected = function() {
-    if ( !Session.get('selected_label') ) {
-        Session.set('selected_label', this.name);
-    }
-    return Session.equals("selected_label", this.name) ? "active" : '';
-};
-
-Template.label.events({
-    'click' : function() {
-        if ( !Session.equals("selected_label", this.name) ) {
-            Session.set("selected_label", this.name);
-            Session.set('label_group', false);
-            Session.set('groups', []);
-        }
-        return false;
-    }
-});
-
 Template.data.events({
     'click caption li a' : function() {
         Session.set('label_group', this instanceof Window ? false : this + '');
@@ -204,10 +141,6 @@ Template.col.attribute = function() {
     console.log('attribute ', this);
 };
 
-Template.sidebar.hover = function() {
-    return Session.get('example');
-};
-
 Template.example.examples = function() {
     return Session.get('example');
 };
@@ -258,4 +191,5 @@ $(document).scroll( function(a,b,c) {
         }
     }
 });
+
 

@@ -1,0 +1,24 @@
+
+<template name="sections">
+            <li class="{{selected}}"><a href="/{{table}}">{{name}}</a></li>
+</template>
+
+<template name="sidebar">
+        <div class="span2">
+            <div id="sidebar" class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    {{#each labels}}
+                        {{> label}}
+                    {{/each}}
+                </ul>
+            </div><!--/.well -->
+            {{#if hover}}
+                {{> example}}
+            {{/if}}
+        </div><!--/span-->
+</template>
+
+<template name="label">
+    <li class="{{selected}}"><a href="/{{ table }}/{{ name }}">{{label}}</a></li>
+</template>
+
