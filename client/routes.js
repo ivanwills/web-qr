@@ -1,8 +1,4 @@
 
-Tables = {
-    qr : new Meteor.Collection("qr")
-};
-
 var WebRouter = Backbone.Router.extend({
     routes: {
         '' : 'default',
@@ -55,12 +51,12 @@ Deps.autorun(function () {
     });
 
     for ( var table in Tables ) {
-        if ( Tables[table] ) continue;
+        //if ( Tables[table] ) continue;
 
         Deps.autorun(function () {
             Meteor.subscribe(table, Session.get(table));
         });
-        Tables[table] = new Meteor.Collection(table);;
+        //Tables[table] = new Meteor.Collection(table);;
     }
     Session.set('qr', true);
 });
