@@ -1,6 +1,6 @@
 [
 	{
-		"name"   : "styles",
+		"collection": "styles",
 		"label"  : "Styles",
 		"labels" : [
 			{ "name" : "attribute",   "label" : "Name"          },
@@ -16,7 +16,7 @@
 		}
 	},
 	{
-		"name": "units",
+		"collection": "units",
 		"label": "CSS Units",
 		"labels": [
 			{ "name": "unit",   "label": "Unit"   },
@@ -28,7 +28,7 @@
 		}
 	},
 	{
-		"name": "at_rules",
+		"collection": "at_rules",
 		"label": "AT-Rules",
 		"labels": [
 			{ "name": "rule",        "label": "Rule"        },
@@ -42,7 +42,7 @@
 		}
 	},
 	{
-		"name": "element_select",
+		"collection": "element_select",
 		"label":  "Element Selectors",
 		"labels": [
 			{ "name": "selector",    "label": "Selector"    },
@@ -56,7 +56,7 @@
 		}
 	},
 	{
-		"name": "attribute_select",
+		"collection": "attribute_select",
 		"label":  "Attribute Selectors",
 		"labels": [
 			{ "name": "selector",    "label": "Selector"    },
@@ -70,7 +70,7 @@
 		}
 	},
 	{
-		"name": "special_select",
+		"collection": "special_select",
 		"label":  "Special HTML Selectors",
 		"labels": [
 			{ "name": "selector",    "label": "Selector"    },
@@ -84,7 +84,7 @@
 		}
 	},
 	{
-		"name": "pseudo_element_select",
+		"collection": "pseudo_element_select",
 		"label":  "Pseudo-Element Selectors",
 		"labels": [
 			{ "name": "selector",    "label": "Selector"    },
@@ -98,7 +98,7 @@
 		}
 	},
 	{
-		"name": "pseudo_class_select",
+		"collection": "pseudo_class_select",
 		"label":  "Pseudo-Class Selectors",
 		"labels": [
 			{ "name": "selector",    "label": "Selector"    },

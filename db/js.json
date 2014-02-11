@@ -1,6 +1,6 @@
 [
 	{
-		"name": "js_date",
+		"collection": "js_date",
 		"label":  "Date",
 		"labels": [
 			{ "name": "selector",    "label": "Selector"    },
@@ -14,7 +14,7 @@
 		}
 	},
 	{
-		"name": "js_json",
+		"collection": "js_json",
 		"label":  "JSON",
 		"labels": [
 			{ "name": "selector",    "label": "Selector"    },
