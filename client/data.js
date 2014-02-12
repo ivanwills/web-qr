@@ -1,11 +1,5 @@
 Session.set('example', false);
 
-Template.data.events({
-    'click caption li a' : function() {
-        Session.set('label_group', this instanceof Window ? false : this + '');
-    }
-});
-
 Template.data.data_heads = function() {
     Session.set('labels', null);
     var table_name = Session.get('selected_table');
@@ -147,6 +141,12 @@ Template.example.examples = function() {
 Template.group.active = function() {
     return Session.equals('label_group', this+'') ? ' active' : '';
 };
+
+Template.group.events({
+    'click li a' : function() {
+        Session.set('label_group', this instanceof Window ? false : this + '');
+    }
+});
 
 Template.col.value = function() {
     return values(this);
