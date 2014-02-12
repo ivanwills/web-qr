@@ -14,22 +14,22 @@ var WebRouter = Backbone.Router.extend({
         var current_table = Session.get('selected_table');
         if ( current_table != table ) {
             Session.set('selected_table', table);
-            Session.set("selected_label", null);
+            Session.set("selected_data", null);
             Session.set('label_group', null);
         }
         return 'qr';
     },
     'label' : function(table, label) {
         var current_table = Session.get('selected_table');
-        var current_label = Session.get('selected_label');
+        var current_label = Session.get('selected_data');
         if ( current_table != table ) {
             Session.set('selected_table', table);
-            Session.set("selected_label", label);
+            Session.set("selected_data", label);
             Session.set('label_group', false);
             Session.set('groups', []);
         }
         else if ( current_label != label ) {
-            Session.set("selected_label", label);
+            Session.set("selected_data", label);
             Session.set('label_group', false);
             Session.set('groups', []);
         }
@@ -40,26 +40,41 @@ var router = new WebRouter();
 
 Backbone.history.start({pushState: true});
 
-Deps.autorun(function () {
-    Meteor.subscribe('qr', Session.get('qr'));
-});
+Tables = [];
 
-Deps.autorun(function () {
-    Tables.qr.find().forEach(function(table) {
-        // only executed on server initially
-        Tables[table.collection] = null;
+function loadTable(name) {
+
+    Deps.autorun( function() {
+        Meteor.subscribe(name, Session.get(name) );
     });
 
-    for ( var table in Tables ) {
-        console.info('found ', table);
+    if ( !Tables[name] )
+        Tables[name] = new Meteor.Collection(name);
 
-        Deps.autorun(function () {
-            Meteor.subscribe(table, Session.get(table));
-        });
+    Deps.autorun(function() {
+        if ( !Tables[name].find().count() )
+            return;
 
-        if ( Tables[table] ) continue;
-        Tables[table] = new Meteor.Collection(table);;
-    }
-    Session.set('qr', true);
-});
+        // only process sub collections if they exist
+        if ( Tables[name].findOne().collection ) {
+            Tables[name].find().forEach( function(row) {
 
+                var load = (function(childName){
+                    Session.set(name, 2);
+                    return function(){ loadTable(childName); };
+                })(row.collection);
+
+                Deps.autorun(load);
+            });
+        }
+
+        var val = Tables[name].find().count() + 1;
+        Session.set(name, val);
+        console.log(name, val);
+    });
+
+    if ( !Session.get(name) )
+        Session.set(name, false);
+}
+
+loadTable('qr');

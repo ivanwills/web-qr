@@ -14,7 +14,7 @@ Template.sections.events({
     'click' : function() {
         if ( !Session.equals("selected_table", this.collection) ) {
             Session.set("selected_table", this.collection);
-            Session.set("selected_label", null);
+            Session.set("selected_data", null);
             Session.set("labels", null);
         }
     }
@@ -22,10 +22,13 @@ Template.sections.events({
 
 Template.sidebar.labels = function(a) {
     var collection = Session.get('selected_table');
-    if ( !Tables || !collection )
+    if ( !Session.get(collection) || !Tables[collection] ) {
+        console.warn('not loaded ', collection, ' yet');
         return;
+    }
 
-    var table = Tables[Session.get('selected_table')];
+    var table = Tables[collection];
+    console.log(collection, ' has ', table.find().count(), ' labels');
     // TODO if table isn't yet created this will not load need to cause
     // to trigger this to change.
     return table ? table.find() : [];
@@ -40,16 +43,16 @@ Template.label.table = function(a) {
 };
 
 Template.label.selected = function() {
-    if ( !Session.get('selected_label') ) {
-        Session.set('selected_label', this.name);
+    if ( !Session.get('selected_data') ) {
+        Session.set('selected_data', this.collection);
     }
-    return Session.equals("selected_label", this.name) ? "active" : '';
+    return Session.equals("selected_data", this.collection) ? "active" : '';
 };
 
 Template.label.events({
     'click' : function() {
-        if ( !Session.equals("selected_label", this.name) ) {
-            Session.set("selected_label", this.name);
+        if ( !Session.equals("selected_data", this.collection) ) {
+            Session.set("selected_data", this.collection);
             Session.set('label_group', false);
             Session.set('groups', []);
         }
