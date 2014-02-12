@@ -6,7 +6,7 @@ Template.data.data_heads = function() {
     var data_name  = Session.get('selected_data');
 
     if ( !table_name || !data_name || !Tables[table_name] ) {
-        console.warn('not loaded "', table_name, '" or "', data_name, '" yet');
+        //console.warn('not loaded "', table_name, '" or "', data_name, '" yet');
         return;
     }
 
@@ -30,7 +30,7 @@ Template.data.values = function() {
     var label_sort = Session.get('label_sort');
 
     if ( !Session.get(data_table) || !Tables[data_table]) {
-        console.warn('not loaded ', data_table, ' yet', Session.get('labels'));
+        //console.warn('not loaded ', data_table, ' yet', Session.get('labels'));
         return;
     }
 
@@ -143,8 +143,11 @@ Template.group.active = function() {
 };
 
 Template.group.events({
-    'click li a' : function() {
+    'click li a' : function(a) {
+        console.log('click', this + '', this, this.data[sort]);
         Session.set('label_group', this instanceof Window ? false : this + '');
+        e.stopPropagation();
+        return false;
     }
 });
 

@@ -13,6 +13,7 @@ var WebRouter = Backbone.Router.extend({
     'table' : function(table) {
         var current_table = Session.get('selected_table');
         if ( current_table != table ) {
+            console.info('selected routing table');
             Session.set('selected_table', table);
             Session.set("selected_data", null);
             Session.set('label_group', null);
@@ -23,12 +24,14 @@ var WebRouter = Backbone.Router.extend({
         var current_table = Session.get('selected_table');
         var current_label = Session.get('selected_data');
         if ( current_table != table ) {
+            console.info('selected routing table data');
             Session.set('selected_table', table);
             Session.set("selected_data", label);
             Session.set('label_group', false);
             Session.set('groups', []);
         }
         else if ( current_label != label ) {
+            console.info('selected routing data');
             Session.set("selected_data", label);
             Session.set('label_group', false);
             Session.set('groups', []);
