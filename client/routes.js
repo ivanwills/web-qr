@@ -70,7 +70,6 @@ function loadTable(name) {
 
         var val = Tables[name].find().count() + 1;
         Session.set(name, val);
-        console.log(name, val);
     });
 
     if ( !Session.get(name) )

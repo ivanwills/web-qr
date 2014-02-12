@@ -28,9 +28,6 @@ Template.sidebar.labels = function(a) {
     }
 
     var table = Tables[collection];
-    console.log(collection, ' has ', table.find().count(), ' labels');
-    // TODO if table isn't yet created this will not load need to cause
-    // to trigger this to change.
     return table ? table.find() : [];
 };
 
@@ -56,6 +53,7 @@ Template.label.events({
             Session.set('label_group', false);
             Session.set('groups', []);
         }
+        router.navigate(this.href, { trigger: false });
         return false;
     }
 });

@@ -8,31 +8,22 @@ Template.data.events({
 
 Template.data.data_heads = function() {
     Session.set('labels', null);
-    console.log('heads');
-    if ( ! Session.get('selected_table') || !Tables )
+    var table_name = Session.get('selected_table');
+    var data_name  = Session.get('selected_data');
+
+    if ( !table_name || !data_name || !Tables[table_name] ) {
+        console.warn('not loaded "', table_name, '" or "', data_name, '" yet');
         return;
-    console.log('table');
-    var table = Tables[ Session.get('selected_table') ];
-    if (!table)
-        return;
-    console.log('all good');
-
-    var found = Tables.qr.findOne({ collection : Session.get('selected_data') });
-
-    if (found) {
-        found = _.find(
-            found.sections,
-            function(section) {
-                return Session.equals('selected_data', section.name)
-            }
-        );
-        if (!found) return;
-
-        var sort = Session.get('label_sort');
-        Session.set('label_sort', found.labels[sort] ? sort : 0);
-        Session.set('labels', found.labels);
-        return found.labels;
     }
+
+    var table = Tables[table_name];
+
+    var found = table.findOne({ collection : data_name });
+    var sort = Session.get('label_sort');
+    Session.set('label_sort', found.labels[sort] ? sort : 0);
+    Session.set('labels', found.labels);
+
+    return found.labels
 };
 
 Template.data.groups = function() {
@@ -42,16 +33,14 @@ Template.data.groups = function() {
 
 Template.data.values = function() {
     var data_table = Session.get('selected_data');
-    var labels     = Session.get('labels');
     var label_sort = Session.get('label_sort');
 
     if ( !Session.get(data_table) || !Tables[data_table]) {
         console.warn('not loaded ', data_table, ' yet', Session.get('labels'));
-        console.log(Session.get(data_table), Tables[data_table]);
         return;
     }
-    console.log(data_table, ' has ', Tables[data_table].find().count(), ' records');
 
+    var labels = Session.get('labels');
     var sort = {};
     sort[ labels[ label_sort ].name ] = 1;
     var group = Session.get('label_group');
