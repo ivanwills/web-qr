@@ -46,7 +46,7 @@ Template.label.table = function(a) {
 Template.label.selected = function() {
     if ( !Session.get('selected_data') ) {
         console.info('selected changing to data');
-        Session.set('selected_data', this.collection);
+        /*Session.set('selected_data', this.collection);*/
     }
     return Session.equals("selected_data", this.collection) ? "active" : '';
 };
@@ -55,11 +55,11 @@ Template.label.events({
     'click' : function(e) {
         if ( !Session.equals("selected_data", this.collection) ) {
             console.info('selected changing click data');
-            Session.set("selected_data", this.collection);
-            Session.set('label_group', false);
-            Session.set('groups', []);
+            /*Session.set("selected_data", this.collection);*/
+            /*Session.set('label_group', false);*/
+            /*Session.set('groups', []);*/
         }
-        router.navigate(this.href, { trigger: false });
+        router.navigate(this.href);
         e.stopPropagation();
         return false;
     }

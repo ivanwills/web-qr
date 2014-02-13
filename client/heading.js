@@ -1,4 +1,3 @@
-
 Template.nav.tables = function () {
     // Read the collections specified in qr
     Tables.qr.find({}, {}).forEach(function(table) {
@@ -8,4 +7,3 @@ Template.nav.tables = function () {
 
     return Tables.qr.find({}, { sort : { pos : 1 } });
 };
-
