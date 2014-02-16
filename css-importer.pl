@@ -18,6 +18,7 @@ use Data::Dumper qw/Dumper/;
 use English qw/ -no_match_vars /;
 use FindBin qw/$Bin/;
 use Path::Class;
+use lib qw/lib/;
 use pQuery;
 
 our $VERSION = version->new('0.0.1');
@@ -76,7 +77,7 @@ sub main {
     for my $id (@properties) {
         my $prop = pQuery("#$id");
         next if ! $prop->size;
-        warn $prop->html;
+        warn pQuery($prop->get(0)->parent)->html;
     }
 
     return;
