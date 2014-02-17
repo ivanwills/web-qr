@@ -1,0 +1,51 @@
+[
+	{
+		"type":        "eleme_sel",
+		"selector":    "[Prefix]|[Elem1]",
+		"ver":         "3.0",
+		"description": "Matches Elem1 with the [Prefix] namespace prefix",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+namespace\">Namespace Selector</a>"
+	},
+	{
+		"type":        "eleme_sel",
+		"selector":    "\"*\"",
+		"ver":         "",
+		"description": "Matches any element",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+universal\">Universal Selector</a>"
+	},
+	{
+		"type":        "eleme_sel",
+		"selector":    "[Elem]",
+		"ver":         "",
+		"description": "Matches specified Element name",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+simple+element\">Simple Element Selector</a>"
+	},
+	{
+		"type":        "eleme_sel",
+		"selector":    "[Elem1] S+ [Elem2]",
+		"ver":         "",
+		"description": "Elem1 is the direct or indirect ancestor of Elem2 ",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+decendent\">Descendent Selectors</a>"
+	},
+	{
+		"type":        "eleme_sel",
+		"selector":    "[Elem1] \"&gt;\" [Elem2]",
+		"ver":         "",
+		"description": "Elem1 is the direct parent of Elem2",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+chile\">Child Selectors</a>"
+	},
+	{
+		"type":        "eleme_sel",
+		"selector":    "[Elem1] \"+\" [Elem2]",
+		"ver":         "",
+		"description": "Elem1 and Elem2 share the same direct parent AND are next to each other in the document tree",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+adjacent\">Adjacent Selectors</a>"
+	},
+	{
+		"type":        "eleme_sel",
+		"selector":    "[Elem1] \"~\" [Elem2]",
+		"ver":         "3.0",
+		"description": "",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+adjacent\">Adjacent Selectors</a>"
+	}
+]

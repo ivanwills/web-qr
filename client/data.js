@@ -1,94 +1,23 @@
 Session.set('example', false);
 
-Template.nav.tables = function () {
-    // Read the collections specified in qr
-    Tables.qr.find({}, {}).forEach(function(table) {
-        var coll = table.collection;
-        if (!Tables[coll]) Tables[coll] = new Meteor.Collection(coll);
-    });
-
-    return Tables.qr.find({}, { sort : { pos : 1 } });
-};
-
-Template.sections.selected = function() {
-    if ( !Session.get('selected_table') ) {
-        Session.set('selected_table', this.collection);
-    }
-    return Session.equals("selected_table", this.collection) ? "active" : '';
-};
-
-Template.sections.table = function() {
-    return this.collection;
-};
-
-Template.sections.events({
-    'click' : function() {
-        if ( !Session.equals("selected_table", this.collection) ) {
-            Session.set("selected_table", this.collection);
-            Session.set("selected_label", null);
-            Session.set("labels", null);
-        }
-    }
-});
-
-Template.sidebar.labels = function(a) {
-    var collection = Session.get('selected_table');
-    if ( !Tables || !collection )
-        return;
-
-    var data = Tables.qr.find( { collection : collection } );
-    data.forEach(function(d) { data = d });
-    return data.sections;
-};
-
-Template.label.table = function(a) {
-    return Session.get('selected_table');
-};
-
-Template.label.selected = function() {
-    if ( !Session.get('selected_label') ) {
-        Session.set('selected_label', this.name);
-    }
-    return Session.equals("selected_label", this.name) ? "active" : '';
-};
-
-Template.label.events({
-    'click' : function() {
-        if ( !Session.equals("selected_label", this.name) ) {
-            Session.set("selected_label", this.name);
-            Session.set('label_group', false);
-            Session.set('groups', []);
-        }
-    }
-});
-
-Template.data.events({
-    'click caption li a' : function() {
-        Session.set('label_group', this instanceof Window ? false : this + '');
-    }
-});
-
 Template.data.data_heads = function() {
     Session.set('labels', null);
-    if ( !Tables || !Session.get('selected_table') || !Tables[Session.get('selected_table')])
+    var table_name = Session.get('selected_table');
+    var data_name  = Session.get('selected_data');
+
+    if ( !table_name || !data_name || !Tables[table_name] ) {
+        //console.warn('not loaded "', table_name, '" or "', data_name, '" yet');
         return;
-
-    var found = Tables.qr.findOne({ collection : Session.get('selected_table') });
-
-    if (found) {
-        found = _.find(
-            found.sections,
-            function(section) {
-                return Session.equals('selected_label', section.name)
-            }
-        );
-        if (!found) return;
-
-        var sort = Session.get('label_sort');
-        Session.set('label_sort', found.labels[sort] ? sort : 0);
-        Session.set('labels', found.labels);
-        return found.labels;
     }
+
+    var table = Tables[table_name];
+
+    var found = table.findOne({ collection : data_name });
+    var sort = Session.get('label_sort');
+    Session.set('label_sort', found.labels[sort] ? sort : 0);
+    Session.set('labels', found.labels);
+
+    return found.labels
 };
 
 Template.data.groups = function() {
@@ -97,23 +26,25 @@ Template.data.groups = function() {
 };
 
 Template.data.values = function() {
-    var selected_table = Session.get('selected_table');
-    var selected_label = Session.get('selected_label');
-    var labels     = Session.get('labels');
+    var data_table = Session.get('selected_data');
     var label_sort = Session.get('label_sort');
 
-    if ( !Tables || !selected_table || !Tables[selected_table])
+    if ( !Session.get(data_table) || !Tables[data_table]) {
+        //console.warn('not loaded ', data_table, ' yet', Session.get('labels'));
         return;
+    }
 
+    var labels = Session.get('labels');
     var sort = {};
     sort[ labels[ label_sort ].name ] = 1;
     var group = Session.get('label_group');
     var name = labels[label_sort].name;
-    var find = { type : selected_label };
+    var find = {};
     if ( typeof group === 'string' && name ) {
         find[ name ] = { $regex : '^\\W*[' + group + group.toUpperCase() + ']' };
     }
-    var found = Tables[selected_table]
+
+    var found = Tables[data_table]
         .find(
             find,
             { sort : sort }
@@ -189,7 +120,7 @@ Template.value.events({
 });
 
 Template.value.value_cols = function() {
-    if ( !Session.get('selected_table') ) return;
+    if ( !Session.get('selected_data') ) return;
 
     var columns = Session.get('labels');
     var values = [];
@@ -203,10 +134,6 @@ Template.col.attribute = function() {
     console.log('attribute ', this);
 };
 
-Template.sidebar.hover = function() {
-    return Session.get('example');
-};
-
 Template.example.examples = function() {
     return Session.get('example');
 };
@@ -214,6 +141,15 @@ Template.example.examples = function() {
 Template.group.active = function() {
     return Session.equals('label_group', this+'') ? ' active' : '';
 };
+
+Template.group.events({
+    'click li a' : function(a) {
+        console.log('click', this + '', this, this.data[sort]);
+        Session.set('label_group', this instanceof Window ? false : this + '');
+        e.stopPropagation();
+        return false;
+    }
+});
 
 Template.col.value = function() {
     return values(this);
@@ -257,4 +193,5 @@ $(document).scroll( function(a,b,c) {
         }
     }
 });
+
 

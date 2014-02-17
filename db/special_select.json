@@ -1,0 +1,16 @@
+[
+	{
+		"type":        "special_sel",
+		"selector":    ".[Class Name]",
+		"ver":         "",
+		"description": "Matches elements with CLASS attributes carrying a [Class Name] value",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+class\">Class Selector</a>"
+	},
+	{
+		"type":        "special_sel",
+		"selector":    "#[ID Name]",
+		"ver":         "",
+		"description": "Matches the element carrying the unique ID attribute value of [ID Name]",
+		"name":        "<a href=\"http://www.google.co.uk/search?q=CSS+selector+id\">ID Selector</a>"
+	}
+]

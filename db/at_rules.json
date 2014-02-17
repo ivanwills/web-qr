@@ -1,0 +1,101 @@
+[
+	{
+		"type":        "at_rules",
+		"rule":        "@charset",
+		"version":     "2.1",
+		"syntax":      "@charset \"<i>characterset\"</i> eg @charset \"utf-8\"",
+		"description": ""
+	},
+	{
+		"type":        "at_rules",
+		"rule":        "@font-face",
+		"version":     "3.0",
+		"syntax":      "",
+		"description": ""
+	},
+	{
+		"type":        "at_rules",
+		"rule":        "@import",
+		"version":     "2.1",
+		"syntax":      "@import url(URL);",
+		"description": "Imports an external css file into the current file's rules"
+	},
+	{
+		"type":        "at_rules",
+		"rule":        "@namespace",
+		"version":     "3.0",
+		"syntax":      "",
+		"description": ""
+	},
+	{
+		"type":        "at_rules",
+		"rule":        "@page",
+		"version":     "2.1",
+		"syntax":      "",
+		"description": ""
+	},
+	{
+		"type":        "at_rules",
+		"rule":        "@media",
+		"version":     "2.1",
+		"syntax":      "@media <i>type</i> { <i>type styles</i> }",
+		"description": {
+			"labels": [
+				{ "name": "type",        "label": "Type"        },
+				{ "name": "description", "label": "Description" }
+			],
+			"sort": {
+				"col":   "type",
+				"order": "asc"
+			},
+			"values": [
+				{
+					"type":        "all",
+					"description": "Used for all media type devices"
+				},
+				{
+					"type":        "aural",
+					"description": "Used for speech and sound synthesizers"
+				},
+				{
+					"type":        "braille",
+					"description": "Used for braille tactile feedback devices"
+				},
+				{
+					"type":        "embossed",
+					"description": "Used for paged braille printers"
+				},
+				{
+					"type":        "handheld",
+					"description": "Used for small or handheld devices"
+				},
+				{
+					"type":        "print",
+					"description": "Used for printers"
+				},
+				{
+					"type":        "projection",
+					"description": "Used for projected presentations, like slides"
+				},
+				{
+					"type":        "screen",
+					"description": "Used for computer screens"
+				},
+				{
+					"type":        "tty",
+					"description": "Used for media using a fixed-pitch character grid, like teletypes and terminals"
+				},
+				{
+					"type":        "tv",
+					"description": "Used for television-type devices"
+				}
+			]
+		}
+	},
+	{
+		"type":        "at_rules",
+		"rule":        "@page",
+		"syntax":      "",
+		"description": ""
+	}
+]
