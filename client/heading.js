@@ -1,3 +1,5 @@
+/*global Template,Tables,Meteor */
+
 Template.nav.tables = function () {
     // Read the collections specified in qr
     Tables.qr.find({}, {}).forEach(function(table) {

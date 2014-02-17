@@ -1,3 +1,4 @@
+/*global Backbone,Session,Tables,Deps,Meteor */
 
 var WebRouter = Backbone.Router.extend({
     routes: {
@@ -7,7 +8,7 @@ var WebRouter = Backbone.Router.extend({
     },
     'default' : function() {
         if ( !Session.get('qr') || !Tables || !Tables.qr || !Tables.qr.find().count() ) return 'blank';
-        setTimeout(function(){ router.navigate('/' + Session.get('selected_table') ) }, 100);
+        setTimeout(function(){ this.navigate('/' + Session.get('selected_table') ); }, 100);
         return 'loading';
     },
     'table' : function(table) {
@@ -38,11 +39,11 @@ var WebRouter = Backbone.Router.extend({
         return 'qr';
     },
 });
-var router = new WebRouter();
+window.router = new WebRouter();
 
 Backbone.history.start({pushState: true});
 
-Tables = [];
+window.Tables = [];
 
 function loadTable(name) {
 

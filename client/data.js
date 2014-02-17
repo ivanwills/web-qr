@@ -1,3 +1,4 @@
+/*global Template,Session,Tables,Deps,Meteor,Window */
 Session.set('example', false);
 
 Template.data.data_heads = function() {
@@ -17,7 +18,7 @@ Template.data.data_heads = function() {
     Session.set('label_sort', found.labels[sort] ? sort : 0);
     Session.set('labels', found.labels);
 
-    return found.labels
+    return found.labels;
 };
 
 Template.data.groups = function() {
@@ -72,32 +73,8 @@ Template.data.values = function() {
             console.error('error calc groups', e);
         }
     }
+
     return found;
-
-    if (0) {
-
-        var group = Session.get('label_group');
-            console.log(group);
-        if (group) {
-            var group_re = new RegExp('^' + group, 'i');
-            console.log(group_re);
-            try {
-                var name = labels[label_sort].name;
-                console.log(label_sort, labels[label_sort], name);
-                var filter = [];
-                console.log('count = ', found.count());
-                filter = found.map( function(row) {
-                    console.log(row);
-                    console.log(found);
-                    if ( row[ name ].match(group_re) ) return row;
-                    return;
-                } );
-                return filter;
-            } catch(e) { console.error('filter ', e); }
-        }
-        return found;
-        return group ? _.filter(found, function(a) {}) : found;
-    }
 };
 
 Template.data_head.events({
@@ -105,7 +82,7 @@ Template.data_head.events({
         var labels     = Session.get('labels');
         var label_sort = Session.get('label_sort');
         for ( var i in labels ) {
-            if ( labels[i].name == this.name ) {
+            if ( labels[i].name === this.name ) {
                 Session.set("label_sort", i);
                 return;
             }
@@ -125,7 +102,9 @@ Template.value.value_cols = function() {
     var columns = Session.get('labels');
     var values = [];
     for ( var i in columns ) {
-        values.push( this[ columns[i].name ] );
+        if (columns.hasOwnProperty(i)) {
+            values.push( this[ columns[i].name ] );
+        }
     }
     return values;
 };
@@ -143,7 +122,7 @@ Template.group.active = function() {
 };
 
 Template.group.events({
-    'click li a' : function(a) {
+    'click li a' : function(e) {
         console.log('click', this + '', this, this.data[sort]);
         Session.set('label_group', this instanceof Window ? false : this + '');
         e.stopPropagation();
@@ -151,19 +130,17 @@ Template.group.events({
     }
 });
 
-Template.col.value = function() {
-    return values(this);
-};
-
 function values(value) {
     if ( value instanceof String ) return value;
 
     var out = '';
     if ( value instanceof Array ) {
-        if ( value.length == 0 ) return '';
+        if ( value.length === 0 ) return '';
         for ( var i in value ) {
-            if (out) out = out + ', ';
-            out = out + value[i];
+            if ( value.hasOwnProperty(i) ) {
+                if (out) out = out + ', ';
+                out = out + value[i];
+            }
         }
         return out;
     }
@@ -171,6 +148,10 @@ function values(value) {
 
     return value;
 }
+
+Template.col.value = function() {
+    return values(this);
+};
 
 var initial_top   = false;
 var initial_width = false;

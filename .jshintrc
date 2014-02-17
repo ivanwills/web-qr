@@ -1,0 +1,22 @@
+{
+    "browser"  : true,  // Standard browser globals e.g. `window`, `document`.
+    "jquery"   : true,  // jQuery always a dependency.
+    "bitwise"  : true,  // Prohibit bitwise operators (&, |, ^, etc.).
+    "curly"    : false, // Require {} for every new block or scope.
+    "eqeqeq"   : true,  // Require triple equals i.e. `===`.
+    "forin"    : true,  // Don't tolerate `for in` loops without `hasOwnPrototype`.
+    "immed"    : true,  // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
+    "latedef"  : true,  // Prohibit variable use before definition.
+    "newcap"   : true,  // Require capitalization of all constructor functions e.g. `new F()`.
+    "noarg"    : true,  // Prohibit use of `arguments.caller` and `arguments.callee`.
+    "noempty"  : true,  // Prohibit use of empty blocks.
+    "nonew"    : true,  // Prohibit use of constructors for side-effects.
+    "regexp"   : true,  // Prohibit `.` and `[^...]` in regular expressions.
+    "undef"    : true,  // Require all non-global variables be declared before they are used.
+    "trailing" : false, // Prohibit trailing whitespaces.
+    "evil"     : false, // Allow eval()
+    "smarttabs": true,  //www.emacswiki.org/SmartTabs
+    "devel"    : true,
+    "debug"    : true,
+    "indent"   : 4      // Specify indentation spacing
+}

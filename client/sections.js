@@ -1,3 +1,4 @@
+/*global Template,Session,Tables,Deps,Meteor,Window,router */
 
 Template.sections.selected = function() {
     if ( !Session.get('selected_table') ) {
